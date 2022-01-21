@@ -31,27 +31,26 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
+        <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
-        <Route path='/' exact={true} >
+        <Route path="/" exact={true}>
           <HomePage />
         </Route>
-        <Route path='/videos/:id' exact={true} >
-          <IndVideoPage />
-        </Route>
-        <Route path='/videos/add' exact={true}>
-          {console.log("!!!!!!!!!!!!!!!!!!!")}
+        <Route path="/videos/add" exact={true}>
           <AddVideoPage />
+        </Route>
+        <Route path="/videos/:id(\\d+)" exact={true}>
+          <IndVideoPage />
         </Route>
       </Switch>
     </BrowserRouter>

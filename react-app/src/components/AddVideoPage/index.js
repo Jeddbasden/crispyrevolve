@@ -14,21 +14,21 @@ const AddVideoPage = () => {
   const [imgUrl, setImgUrl] = useState("")
   console.log("!!!!!!! USER !!!!!!!!!", user)
   
-  // const onSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const video = {
-  //     title,
-  //     videoUrl,
-  //     description,
-  //     imgUrl
-  //   };
+  const submit = async (e) => {
+    e.preventDefault()
+    const video = {
+      title,
+      videoUrl,
+      description,
+      imgUrl
+    };
 
-  //   await dispatch(addVideo(video));
-  // }
+    await dispatch(addVideo(video));
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={submit}>
         <div>
           <label>Title</label>
           <input
