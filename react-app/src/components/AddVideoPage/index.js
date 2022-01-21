@@ -12,7 +12,6 @@ const AddVideoPage = () => {
   const [videoUrl, setVideoUrl] = useState("")
   const [description, setDescription] = useState("")
   const [imgUrl, setImgUrl] = useState("")
-  console.log("!!!!!!! USER !!!!!!!!!", user)
   
   const submit = async (e) => {
     e.preventDefault()
