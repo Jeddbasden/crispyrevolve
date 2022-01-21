@@ -12,7 +12,7 @@ const add_video = (data) => ({
 })
 
 export const getVideos = () => async (dispatch) => {
-  const res = await fetch(`api/videos`)
+  const res = await fetch(`api/videos/`)
   const data = await res.json();
 
   await dispatch(get_videos(data));
