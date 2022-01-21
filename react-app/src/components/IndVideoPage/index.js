@@ -15,7 +15,12 @@ const IndVideoPage = () => {
   const { id } = useParams();
   
   useEffect(() => {
-    dispatch(getVideos());
+    
+    const doIt = async () => {
+      await dispatch(getVideos());
+    };
+    
+    doIt();
   }, [dispatch])
   const video = videos[id - 1];
 

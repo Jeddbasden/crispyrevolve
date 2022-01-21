@@ -10,15 +10,24 @@ import './HomePage.css'
 
 const HomePage = () => {
   const videos = useSelector(state => state.videos);
+  const user = useSelector(state => state.session.user) 
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(getVideos());
+    
+    const doIt = async () => {
+      await dispatch(getVideos());
+    }
+    doIt();
   }, [dispatch])
 
   return (
     <ul>
+      {user && (
+        <NavLink to="/videos/add">Add a Video</NavLink>
+      )}
+      <div>
       {videos[0] && (videos.map(video => {
         return (
           <li key={video?.id}>
@@ -27,11 +36,13 @@ const HomePage = () => {
                 e.preventDefault();
                 history.push(`/videos/${video?.id}`)
               }}
+              alt='video image'
               src={`${video?.imgUrl}`} />
             <h2>{video?.title}</h2>
           </li>
         )
       }))}
+      </div>
     </ul>
   )
 }

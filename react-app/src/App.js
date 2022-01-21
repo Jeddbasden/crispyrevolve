@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import IndVideoPage from './components/IndVideoPage'
+import AddVideoPage from './components/AddVideoPage';
 import User from './components/User';
 import { authenticate } from './store/session';
 
@@ -47,6 +48,10 @@ function App() {
         </Route>
         <Route path='/videos/:id' exact={true} >
           <IndVideoPage />
+        </Route>
+        <Route path='/videos/add' exact={true}>
+          {console.log("!!!!!!!!!!!!!!!!!!!")}
+          <AddVideoPage />
         </Route>
       </Switch>
     </BrowserRouter>
