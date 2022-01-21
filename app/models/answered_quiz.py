@@ -5,7 +5,7 @@ class AnsweredQuiz(db.Model):
 
   id = db.Column(db.Integer, primary_key=True)
   userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-  quizId = db.Column(db.Integer, db.ForeignKey('videos.id'), nullable=False)
+  quizId = db.Column(db.Integer, db.ForeignKey('quizzes.id'), nullable=False)
   score = db.Column(db.String(10), nullable=False)
 
   user = db.relationship('User', back_populates='answered_quizzes')

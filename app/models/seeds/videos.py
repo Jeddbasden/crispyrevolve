@@ -28,7 +28,7 @@ def seed_videos():
     userId=1,
     title= 'Nomad(Megalo Boxing) new season trailer',
     videoUrl='https://www.youtube.com/watch?v=kHBlVtrtjck',
-    description="gearless joe is back!"
+    description="gearless joe is back!",
     imgUrl="https://cdn.epicstream.com/assets/uploads/newscover/1618504912maxresdefault_(5).jpg"
   )
 

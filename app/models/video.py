@@ -11,6 +11,11 @@ class Video(db.Model):
   imgUrl = db.Column(db.String(250), nullable=True)
 
   user = db.relationship('User', back_populates='videos')
+  polls = db.relationship('Poll', back_populates='video')
+  comments = db.relationship('Comment', back_populates='video')
+  likes = db.relationship('Like', back_populates='video')
+  quizzes = db.relationship('Quiz', back_populates='video')
+  
 
   def to_dict(self):
     return {

@@ -16,6 +16,7 @@ class Poll(db.Model):
 
   user = db.relationship('User', back_populates='polls')
   video = db.relationship('Video', back_populates='polls')
+  answered_polls = db.relationship('AnsweredPoll', back_populates='poll')
 
   def to_dict(self):
     return {

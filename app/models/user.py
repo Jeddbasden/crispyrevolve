@@ -13,11 +13,13 @@ class User(db.Model, UserMixin):
     profileImg = db.Column(db.String(255), nullable=True)
     backgroundImg = db.Column(db.String(255), nullable=True)
 
-    videos = db.relationship('Video', back_populates='users')
-    polls = db.relationship('Poll', back_populates='users')
-    likes = db.relationship('Like', back_populates='users')
-    answeredPolls = db.relationship('AnsweredPoll', back_populates='users')
-
+    videos = db.relationship('Video', back_populates='user')
+    polls = db.relationship('Poll', back_populates='user')
+    likes = db.relationship('Like', back_populates='user')
+    quizzes = db.relationship('Quiz', back_populates='user')
+    answered_polls = db.relationship('AnsweredPoll', back_populates='user')
+    answered_quizzes = db.relationship('AnsweredQuiz', back_populates='user')
+    comments = db.relationship('Comment', back_populates='user')
 
     @property
     def password(self):

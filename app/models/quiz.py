@@ -17,6 +17,7 @@ class Quiz(db.Model):
   
   user = db.relationship('User', back_populates='quizzes')
   video = db.relationship('Video', back_populates='quizzes')
+  answered_quizzes = db.relationship('AnsweredQuiz', back_populates='quiz')
 
   def to_dict(self):
     return {
