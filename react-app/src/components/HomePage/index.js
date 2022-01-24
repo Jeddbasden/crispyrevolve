@@ -15,7 +15,6 @@ const HomePage = () => {
   const history = useHistory();
 
   useEffect(() => {
-    
     const doIt = async () => {
       await dispatch(getVideos());
     }
@@ -31,6 +30,7 @@ const HomePage = () => {
       {videos[0] && (videos.map(video => {
         return (
           <li key={video?.id}>
+            <h2>{video?.title}</h2>
             <img
               onClick={(e) => {
                 e.preventDefault();
@@ -38,7 +38,6 @@ const HomePage = () => {
               }}
               alt='video image'
               src={`${video?.imgUrl}`} />
-            <h2>{video?.title}</h2>
           </li>
         )
       }))}

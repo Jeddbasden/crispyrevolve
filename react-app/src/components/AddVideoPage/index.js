@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 const AddVideoPage = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
+  const history = useHistory()
 
   const [title, setTitle] = useState("")
   const [videoUrl, setVideoUrl] = useState("")
@@ -23,6 +24,7 @@ const AddVideoPage = () => {
     };
 
     await dispatch(addVideo(video));
+    return history.push('/')
   }
 
   return (

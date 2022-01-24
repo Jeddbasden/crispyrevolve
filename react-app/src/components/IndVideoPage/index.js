@@ -13,9 +13,9 @@ const IndVideoPage = () => {
   const videos = useSelector(state => state.videos);
   const dispatch = useDispatch();
   const { id } = useParams();
+  const user = useSelector(state => state.session.user)
   
   useEffect(() => {
-    
     const doIt = async () => {
       await dispatch(getVideos());
     };
@@ -23,6 +23,7 @@ const IndVideoPage = () => {
     doIt();
   }, [dispatch])
   const video = videos[id - 1];
+  
 
   return (
     <div>
@@ -31,6 +32,9 @@ const IndVideoPage = () => {
           url={`${video?.videoUrl}`}
         />
       </div>
+      {user.id === video.userId && (
+        <DeleteVideoButton />
+      )}
     </div>
   );
 }
