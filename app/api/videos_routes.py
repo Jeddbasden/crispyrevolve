@@ -1,7 +1,8 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_login import current_user, login_required
 
-from app.models import Video
+
+from app.models import Video, db
 from app.forms import AddVideoForm
 
 videos_routes = Blueprint('videos', __name__)
@@ -13,22 +14,25 @@ def get_videos():
   return {'videos': videos}
 
 
-@videos_routes.route('/add', methods=['POST'])
+@videos_routes.route('/', methods=['POST'])
 @login_required
 def add_video():
   form = AddVideoForm()
-  form['csrf_token'].date = request.cookies['csrf_token']
-  user = session.get('user')
-  print("!!!!!! USER !!!!!!", user)
+  form['csrf_token'].data = request.cookies['csrf_token']
+  user = current_user
+
   id = user.id
-  print("!!!!!! USERID !!!!!!", id)
-  # if form.validate_on_submit():
-  #   video = Video(
-  #     userId = 
-  #     title=form.data['title']
-  #     title=form.data['title']
-  #     title=form.data['title']
-  #     title=form.data['title']
-  #   )
-  
-  return {'videos': videos}
+
+  if form.validate_on_submit():
+    video = Video(
+      userId = id,
+      title=form.data['title'],
+      videoUrl=form.data['videoUrl'],
+      description=form.data['description'],
+      imgUrl=form.data['imgUrl']
+    )
+
+    db.session.add(video)
+    db.session.commit()
+    return video.to_dict()
+  return form.errors

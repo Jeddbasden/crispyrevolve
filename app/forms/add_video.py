@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, TextAreaField
+from wtforms import StringField, IntegerField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
 
 class AddVideoForm(FlaskForm):
@@ -7,3 +7,4 @@ class AddVideoForm(FlaskForm):
   videoUrl = StringField('videoUrl', validators=[DataRequired()])
   description = TextAreaField('description')
   imgUrl = StringField('imgUrl')
+  submit = SubmitField('submit')
