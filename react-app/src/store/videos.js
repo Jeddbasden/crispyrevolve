@@ -1,5 +1,5 @@
 const GET_VIDEOS = 'videos/GET_VIDEOS'
-const ADD_VIDEO = 'videos/GET_VIDEO'
+const ADD_VIDEO = 'videos/ADD_VIDEO'
 
 const get_videos = (data) => ({
   type: GET_VIDEOS,
@@ -35,6 +35,11 @@ export const addVideo = (video) => async (dispatch) => {
   const data = res.json()
   await dispatch(add_video(data))
 }
+
+
+
+
+
 
 const videosReducer = (state = {}, action) => {
   let newState;

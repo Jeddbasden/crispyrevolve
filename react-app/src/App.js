@@ -49,7 +49,7 @@ function App() {
         <Route path="/videos/add" exact={true}>
           <AddVideoPage />
         </Route>
-        <Route path="/videos/:id(\\d+)" exact={true}>
+        <Route path="/videos/:id" exact={true}>
           <IndVideoPage />
         </Route>
       </Switch>

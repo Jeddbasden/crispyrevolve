@@ -32,6 +32,7 @@ const AddVideoPage = () => {
           <label>Title</label>
           <input
             type='text'
+            name='title'
             value={title}
             onChange={e => setTitle(e.target.value)}
             required
@@ -41,6 +42,7 @@ const AddVideoPage = () => {
           <label>Video Url</label>
           <input
             type='text'
+            name='videoUrl'
             value={videoUrl}
             onChange={e => setVideoUrl(e.target.value)}
             required
@@ -50,6 +52,7 @@ const AddVideoPage = () => {
           <label>Description</label>
           <input
             type='text'
+            name='description'
             value={description}
             onChange={e => setDescription(e.target.value)}
             required
@@ -59,11 +62,13 @@ const AddVideoPage = () => {
           <label>Image Url</label>
           <input
             type='text'
+            name='imgUrl'
             value={imgUrl}
             onChange={e => setImgUrl(e.target.value)}
             required
           />
         </div>
+        <button type='submit'>submit</button>
       </form>
     </div>
   )
