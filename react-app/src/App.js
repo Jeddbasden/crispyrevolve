@@ -9,6 +9,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import IndVideoPage from './components/IndVideoPage'
 import AddVideoPage from './components/AddVideoPage';
+import EditVideoPage from './components/EditVideoPage';
 import User from './components/User';
 import { authenticate } from './store/session';
 
@@ -51,6 +52,9 @@ function App() {
         </Route>
         <Route path="/videos/:id" exact={true}>
           <IndVideoPage />
+        </Route>
+        <Route path="/videos/:id/edit" exact={true}>
+          <EditVideoPage />
         </Route>
       </Switch>
     </BrowserRouter>

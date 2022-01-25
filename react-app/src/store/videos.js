@@ -1,6 +1,7 @@
 const GET_VIDEOS = 'videos/GET_VIDEOS'
 const ADD_VIDEO = 'videos/ADD_VIDEO'
 const DELETE_VIDEO = 'videos/DELETE_VIDEO'
+const EDIT_VIDEO = 'videos/EDIT_VIDEO'
 
 const get_videos = (data) => ({
   type: GET_VIDEOS,
@@ -15,6 +16,11 @@ const add_video = (data) => ({
 const delete_video = (data) => ({
   type: DELETE_VIDEO,
   data,
+})
+
+const edit_video = (data) => ({
+  type: EDIT_VIDEO,
+  data
 })
 
 export const getVideos = () => async (dispatch) => {
@@ -54,7 +60,17 @@ export const deleteVideo = (video) => async (dispatch) => {
   await dispatch(delete_video(data))
 }
 
-
+export const editVideo = (newVideo, id) => async (dispatch) => {
+  const res = await fetch(`/api/videos/${id}/edit`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newVideo)
+  })
+  const data = res.json();
+  await dispatch(edit_video(data))
+}
 
 
 const videosReducer = (state = {}, action) => {
@@ -66,6 +82,12 @@ const videosReducer = (state = {}, action) => {
       newState = { ...state, };
       newState = videos
       return newState;
+    
+    // case EDIT_VIDEO:
+    //   const video = action.data
+    //   newState = { ...state }
+    //   newState.videos[video.id - 1] = video
+    //   return newState
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addVideo } from "../../store/videos";
 import { useHistory } from "react-router-dom";
@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 const AddVideoPage = () => {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.session.user);
   const history = useHistory()
 
   const [title, setTitle] = useState("")
@@ -52,7 +51,7 @@ const AddVideoPage = () => {
         </div>
         <div>
           <label>Description</label>
-          <input
+          <textarea
             type='text'
             name='description'
             value={description}
