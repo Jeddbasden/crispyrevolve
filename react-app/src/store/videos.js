@@ -1,5 +1,6 @@
 const GET_VIDEOS = 'videos/GET_VIDEOS'
 const ADD_VIDEO = 'videos/ADD_VIDEO'
+const DELETE_VIDEO = 'videos/DELETE_VIDEO'
 
 const get_videos = (data) => ({
   type: GET_VIDEOS,
@@ -8,6 +9,11 @@ const get_videos = (data) => ({
 
 const add_video = (data) => ({
   type: ADD_VIDEO,
+  data,
+})
+
+const delete_video = (data) => ({
+  type: DELETE_VIDEO,
   data,
 })
 
@@ -36,7 +42,17 @@ export const addVideo = (video) => async (dispatch) => {
   await dispatch(add_video(data))
 }
 
-
+export const deleteVideo = (video) => async (dispatch) => {
+  const res = await fetch("/api/videos/", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(video),
+  });
+  const data = res.json()
+  await dispatch(delete_video(data))
+}
 
 
 

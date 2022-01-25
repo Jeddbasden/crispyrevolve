@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideos } from "../../store/videos";
 import ReactPlayer from "react-player";
+import DeleteVideoButton from "./DeleteVideoButton"
 
 // import "video-react/dist/video-react.css";
 import './IndVideoPage.css'
@@ -15,6 +16,8 @@ const IndVideoPage = () => {
   const { id } = useParams();
   const user = useSelector(state => state.session.user)
   
+  const video = videos.find(video => video?.id === Number(id));
+  
   useEffect(() => {
     const doIt = async () => {
       await dispatch(getVideos());
@@ -22,8 +25,6 @@ const IndVideoPage = () => {
     
     doIt();
   }, [dispatch])
-  const video = videos[id - 1];
-  
 
   return (
     <div>
@@ -32,8 +33,8 @@ const IndVideoPage = () => {
           url={`${video?.videoUrl}`}
         />
       </div>
-      {user.id === video.userId && (
-        <DeleteVideoButton />
+      {user?.id === video?.userId && (
+        <DeleteVideoButton video={video}/>
       )}
     </div>
   );

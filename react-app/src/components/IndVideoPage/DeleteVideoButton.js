@@ -1,9 +1,25 @@
+import React, {useEffect} from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom";
+import { deleteVideo } from "../../store/videos";
+
+const DeleteVideoButton = (video) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
 
 
-const DeleteVideoButton = () => {
-
+  const remove = async (e) => {
+    e.preventDefault();
+    const confirmed = window.confirm()
+    if (confirmed) {
+      await dispatch(deleteVideo(video))
+      return history.push('/')
+    }
+  }
 
   return (
-    <button type="button" onClick={e => {}}>delete</button>
+    <button id={video.id} type="button" onClick={remove}>delete</button>
   )
 }
+
+export default DeleteVideoButton;

@@ -36,3 +36,16 @@ def add_video():
     db.session.commit()
     return video.to_dict()
   return form.errors
+
+
+@videos_routes.route('/', methods=['DELETE'])
+@login_required
+def delete_video():
+  data = request.json['video']
+  id = data['id']
+
+  video = Video.query.get(id)
+  db.session.delete(video)
+  db.session.commit()
+  
+  return{'message': "success"}
