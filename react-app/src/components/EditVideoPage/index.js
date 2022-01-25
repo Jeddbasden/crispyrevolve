@@ -13,7 +13,6 @@ const EditVideoPage = () => {
 
   console.log("!!!!!!!! VIDEO !!!!!!!", video)
   const [title, setTitle] = useState(video?.title);
-  const [videoUrl, setVideoUrl] = useState(video?.videoUrl);
   const [description, setDescription] = useState(video?.description);
   const [imgUrl, setImgUrl] = useState(video?.imgUrl);
 

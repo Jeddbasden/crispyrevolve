@@ -58,7 +58,6 @@ def edit_video(id):
   form['csrf_token'].data = request.cookies['csrf_token']
 
   video = Video.query.get(id)
-  print("!!!! VIDEO !!!", video.to_dict())
 
   if form.validate_on_submit():
     video.title = form.data['title']
@@ -66,7 +65,7 @@ def edit_video(id):
     video.description = form.data['description']
     
     db.session.commit()
-    print("!!!! VIDEO !!!", video)
+    
     return video.to_dict()
 
   return form.errors
