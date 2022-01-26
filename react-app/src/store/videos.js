@@ -44,7 +44,7 @@ export const addVideo = (video) => async (dispatch) => {
     })
   });
 
-  const data = res.json()
+  const data = await res.json()
   await dispatch(add_video(data))
 }
 
@@ -56,7 +56,7 @@ export const deleteVideo = (video) => async (dispatch) => {
     },
     body: JSON.stringify(video),
   });
-  const data = res.json()
+  const data = await res.json()
   await dispatch(delete_video(data))
 }
 
@@ -68,7 +68,7 @@ export const editVideo = (newVideo, id) => async (dispatch) => {
     },
     body: JSON.stringify(newVideo)
   })
-  const data = res.json();
+  const data = await res.json();
   await dispatch(edit_video(data))
 }
 

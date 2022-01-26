@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment, getComments } from "../../../store/comments";
+import DeleteCommentButton from "./DeleteCommentButton";
+import EditCommentButton from "./EditCommentButton";
 
 
 const Comments = ({ videoId }) => {
@@ -45,10 +47,12 @@ const Comments = ({ videoId }) => {
         <button type="submit">Add</button>
       </form>
       {comments.length > 0 &&
-        comments?.map((comment) => {
+        comments?.map((icomment) => {
           return (
             <div>
-              <p>{comment.comment}</p>
+              <p>{icomment.comment}</p>
+              <EditCommentButton comment={icomment} />
+              <DeleteCommentButton comment={icomment} />
             </div>
           );
         })}
