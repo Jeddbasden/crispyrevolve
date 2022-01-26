@@ -12,7 +12,8 @@ export const getComments = (videoId) => async(dispatch) => {
   await dispatch(update_comments(data))
 }
 
-export const addComment = (comment) => async(dispatch) => {
+export const addComment = (comment) => async (dispatch) => {
+  
   const res = await fetch(`/api/comments/add`, {
     method: "POST",
     headers: {
@@ -26,6 +27,13 @@ export const addComment = (comment) => async(dispatch) => {
   await dispatch(update_comments(data))
 }
 
+export const deleteComment = (comment) => async (dispatch) => {
+  const res = await fetch(`/api/comments/${comment.id}`, {
+    method: "DELETE",
+  });
+  const data = await res.json();
+  await dispatch(update_comments(data))
+}
 
 const CommentsReducer = (state = {}, action) => {
   let newState;

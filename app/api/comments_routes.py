@@ -34,3 +34,16 @@ def add_comments():
     comments = Comment.query.filter(Comment.videoId == videoId).all()
     comments = [item.to_dict() for item in comments]
     return{'comments': comments}
+
+@comments_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_comments(id):
+
+  comment = Comment.query.get(id)
+  videoId = comment.videoId
+  db.session.delete(comment)
+  db.session.commit()
+  
+  comments = Comment.query.filter(Comment.videoId == videoId).all()
+  comments = [item.to_dict() for item in comments]
+  return{"comments": comments}
