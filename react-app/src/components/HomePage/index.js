@@ -24,7 +24,7 @@ const HomePage = () => {
   return (
     <ul>
       {user && (
-        <NavLink to="/videos/add">Add a Video</NavLink>
+        <button onClick={e => history.push('/videos/add')}>Add a Video</button>
       )}
       <div>
       {videos[0] && (videos.map(video => {
