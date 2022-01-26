@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 import DeleteVideoButton from "./DeleteVideoButton"
 import EditVideoButton from "./EditVideoButton";
 import './IndVideoPage.css'
-import Comments from "./Comments";
+import Comments from "./Comments/index";
 
 
 const IndVideoPage = () => {
@@ -39,7 +39,7 @@ const IndVideoPage = () => {
       <div>
         <p>{video?.description}</p>
       </div>
-      {user?.id === video?.userId && (
+      {videos?.length > 0 && (
         <div>
           <DeleteVideoButton video={video} />
           <EditVideoButton video={video} />
