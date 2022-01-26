@@ -7,16 +7,11 @@ import ReactPlayer from "react-player";
 import DeleteVideoButton from "./DeleteVideoButton"
 import EditVideoButton from "./EditVideoButton";
 import './IndVideoPage.css'
+import Comments from "./Comments";
 
 
 const IndVideoPage = () => {
-  const videos = useSelector(state => state.videos);
   const dispatch = useDispatch();
-  const { id } = useParams();
-  const user = useSelector(state => state.session.user)
-  
-  const video = videos.find(video => video?.id === Number(id));
-
   useEffect(() => {
     const doIt = async () => {
       await dispatch(getVideos());
@@ -24,6 +19,12 @@ const IndVideoPage = () => {
     
     doIt();
   }, [dispatch])
+  const { id } = useParams();
+  const user = useSelector(state => state.session.user)
+  
+  
+  const videos = useSelector(state => state.videos);
+  const video = videos?.find(video => video?.id === Number(id));
 
   return (
     <div>
@@ -35,12 +36,18 @@ const IndVideoPage = () => {
       <div>
         <h1>{video?.title}</h1>
       </div>
+      <div>
+        <p>{video?.description}</p>
+      </div>
       {user?.id === video?.userId && (
         <div>
           <DeleteVideoButton video={video} />
           <EditVideoButton video={video} />
         </div>
       )}
+      <div>
+        <Comments videoId={ video.id }/>
+      </div>
     </div>
   );
 }

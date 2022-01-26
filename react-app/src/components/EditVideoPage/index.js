@@ -64,7 +64,7 @@ const EditVideoPage = () => {
             required
           />
         </div>
-        <button type="submit">submit</button>
+        <button type="submit">Done</button>
       </form>
     </div>
   );

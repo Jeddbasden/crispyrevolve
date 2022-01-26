@@ -78,16 +78,10 @@ const videosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case GET_VIDEOS:
-      const videos = action.data.videos
       newState = { ...state, };
-      newState = videos
+      newState = action.data.videos;
       return newState;
-    
-    // case EDIT_VIDEO:
-    //   const video = action.data
-    //   newState = { ...state }
-    //   newState.videos[video.id - 1] = video
-    //   return newState
+
     default:
       return state;
   }
