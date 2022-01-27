@@ -1,6 +1,6 @@
 # CrispyRevolve
 Hi! welcome to crispyrevolve the site where you can watch dope anime clips with a twist!
-head to https://crispyrevolve.herokuapp.com/ for the main version
+head to https://crispyrevolve.herokuapp.com/ for the main version, for a local version follow the steps below!
 
 ## Set up locally
 * clone the repository
