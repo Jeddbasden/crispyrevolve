@@ -35,6 +35,18 @@ export const deleteComment = (comment) => async (dispatch) => {
   await dispatch(update_comments(data))
 }
 
+export const editComment = (comment, id) => async(dispatch) => {
+  const res = await fetch(`/api/comments/${id}/edit`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ 'comment': comment })
+  })
+  const data = await res.json();
+  await dispatch(update_comments(data));
+}
+
 const CommentsReducer = (state = {}, action) => {
   let newState;
 

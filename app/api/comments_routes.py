@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask_login import current_user, login_required
 
 from app.models import Video, db, Comment
-from app.forms import AddCommentForm
+from app.forms import AddCommentForm, EditCommentForm
 
 comments_routes = Blueprint('comments', __name__)
 
@@ -37,7 +37,7 @@ def add_comments():
 
 @comments_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
-def delete_comments(id):
+def delete_comment(id):
 
   comment = Comment.query.get(id)
   videoId = comment.videoId
@@ -47,3 +47,24 @@ def delete_comments(id):
   comments = Comment.query.filter(Comment.videoId == videoId).all()
   comments = [item.to_dict() for item in comments]
   return{"comments": comments}
+
+
+@comments_routes.route('/<int:id>/edit', methods=['PATCH'])
+@login_required
+def edit_comment(id):
+  form = EditCommentForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+
+  comment = Comment.query.get(id)
+  videoId = comment.videoId
+
+  if form.validate_on_submit():
+    comment.comment = form.data['comment']
+
+    db.session.commit()
+
+    comments = Comment.query.filter(Comment.videoId == videoId).all()
+    comments = [item.to_dict() for item in comments]
+    return{"comments": comments}
+
+  return {"message": "teehee failure sorry" }
