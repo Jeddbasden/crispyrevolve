@@ -22,28 +22,41 @@ const HomePage = () => {
   }, [dispatch])
 
   return (
-    <ul>
-      {user && (
-        <button onClick={e => history.push('/videos/add')}>Add a Video</button>
-      )}
+    <div className="main-page-div">
       <div>
-      {videos[0] && (videos.map(video => {
-        return (
-          <li key={video?.id}>
-            <h2>{video?.title}</h2>
-            <img
-              onClick={(e) => {
-                e.preventDefault();
-                history.push(`/videos/${video?.id}`)
-              }}
-              alt='video image'
-              src={`${video?.imgUrl}`} />
-          </li>
-        )
-      }))}
+        <img
+          className="main-background"
+          src="https://images7.alphacoders.com/740/740615.png"
+        />
       </div>
-    </ul>
-  )
+      <div classname="featured-videos">
+        <h1>Featured Videos</h1>
+      </div>
+      <hr />
+      <ul>
+        <div className="section">
+          {videos[0] &&
+            videos.map((video) => {
+              return (
+                <li key={video?.id}>
+                  <div>
+                    <h3>{video?.title}</h3>
+                    <img
+                      onClick={(e) => {
+                        e.preventDefault();
+                        history.push(`/videos/${video?.id}`);
+                      }}
+                      alt="video image"
+                      src={`${video?.imgUrl}`}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+        </div>
+      </ul>
+    </div>
+  );
 }
 
 export default HomePage
