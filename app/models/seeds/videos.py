@@ -5,7 +5,7 @@ def seed_videos():
     userId=1,
     title="Haikyu hype moment",
     videoUrl="https://www.youtube.com/watch?v=QArog-oWuDk",
-    description="Final point of Karasuno vs Aoba Johsai, really long point wiht both teams fighting hard but karasuno comes out on top! follow my twitch",
+    description="Final point of Karasuno vs Aoba Johsai, really long point with both teams fighting hard but Karasuno comes out on top! follow my twitch",
     imgUrl="https://i.ytimg.com/vi/8zYkNXMTESw/maxresdefault.jpg"
   )
 

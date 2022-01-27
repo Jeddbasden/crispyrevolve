@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background: linear-gradient(to right, #480ca8, #000000);
+}
+
+.navUl {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  border-radius: 25px;
+}
