@@ -11,7 +11,6 @@ const EditVideoPage = () => {
   const dispatch = useDispatch()
   const video = videos?.find((video) => video?.id === Number(id));
 
-  console.log("!!!!!!!! VIDEO !!!!!!!", video)
   const [title, setTitle] = useState(video?.title);
   const [description, setDescription] = useState(video?.description);
   const [imgUrl, setImgUrl] = useState(video?.imgUrl);
