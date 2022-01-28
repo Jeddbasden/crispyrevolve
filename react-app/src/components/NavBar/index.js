@@ -14,7 +14,7 @@ const NavBar = () => {
   const history = useHistory()
   return (
     <nav>
-      <TitleDiv>
+      <TitleDiv onClick={() => history.push("/")}>
         <img
           className="logo"
           src={logo}
