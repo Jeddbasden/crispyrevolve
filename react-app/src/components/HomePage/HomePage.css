@@ -2,34 +2,15 @@ li {
   list-style: none;
 }
 
-img {
-  height: auto;
-  width: 250px;
-}
 
 .main-background {
   width: 100%;
+  height: auto;
 }
 
 .main-page-div {
   padding-left: 75px;
   padding-right: 75px;
-}
-
-.sectionDiv {
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  grid-column-end: span 2;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  border-radius: 10px;
-  width: 100%;
-  height: 200px;
-  justify-content: center;
-  align-items: center;
 }
 
 .section {
@@ -57,4 +38,21 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.title-profileDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoTitle {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  $random-text: "stolen hour";
   position: relative;
   text-transform: uppercase;
   font-size: $extra-large;

@@ -14,6 +14,7 @@ import EditVideoPage from './components/EditVideoPage';
 import User from './components/User';
 import { authenticate } from './store/session';
 import "./index.css";
+import { getVideos } from './store/videos';
 
 
 
@@ -25,6 +26,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getVideos());
       setLoaded(true);
     })();
   }, [dispatch]);
