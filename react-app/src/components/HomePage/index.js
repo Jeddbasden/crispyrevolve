@@ -29,7 +29,7 @@ const HomePage = () => {
           src="https://images7.alphacoders.com/740/740615.png"
         />
       </div>
-      <div classname="featured-videos">
+      <div className="featured-videos">
         <h1>Featured Videos</h1>
       </div>
       <hr />

@@ -13,6 +13,10 @@ import EditCommentPage from './components/EditCommentPage'
 import EditVideoPage from './components/EditVideoPage';
 import User from './components/User';
 import { authenticate } from './store/session';
+import "./index.css";
+
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,35 +36,35 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
-        <Route path="/" exact={true}>
-          <HomePage />
-        </Route>
-        <Route path="/videos/add" exact={true}>
-          <AddVideoPage />
-        </Route>
-        <Route path="/videos/:id" exact={true}>
-          <IndVideoPage />
-        </Route>
-        <Route path="/videos/:id/edit" exact={true}>
-          <EditVideoPage />
-        </Route>
-        <Route path="/comments/:id/edit" exact={true}>
-          <EditCommentPage />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path="/login" exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route>
+          <ProtectedRoute path="/users" exact={true}>
+            <UsersList />
+          </ProtectedRoute>
+          <ProtectedRoute path="/users/:userId" exact={true}>
+            <User />
+          </ProtectedRoute>
+          <Route path="/" exact={true}>
+            <HomePage />
+          </Route>
+          <Route path="/videos/add" exact={true}>
+            <AddVideoPage />
+          </Route>
+          <Route path="/videos/:id" exact={true}>
+            <IndVideoPage />
+          </Route>
+          <Route path="/videos/:id/edit" exact={true}>
+            <EditVideoPage />
+          </Route>
+          <Route path="/comments/:id/edit" exact={true}>
+            <EditCommentPage />
+          </Route>
+        </Switch>
     </BrowserRouter>
   );
 }
