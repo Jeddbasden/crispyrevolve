@@ -3,6 +3,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import { Button } from '../StyledComponents/Button-style'
+import logo from '../../assets/logo.jpg'
+import { Title, TitleDiv } from '../StyledComponents/title-style';
+import { NavLi } from '../StyledComponents/Nav-style';
 import './NavBar.css'
 
 const NavBar = () => {
@@ -10,43 +14,44 @@ const NavBar = () => {
   const history = useHistory()
   return (
     <nav>
-      <div>
-        <img className="logo" src="https://logodix.com/logo/964688.jpg" />
-      </div>
+      <TitleDiv>
+        <img
+          className="logo"
+          src={logo}
+        />
+        <Title>CrispyRevolve</Title>
+      </TitleDiv>
       <ul className="navUl">
-        <div></div>
-        <li>
+        <NavLi>
           <NavLink to="/" exact={true} activeClassName="active">
             Home
           </NavLink>
-        </li>
-        <li>
+        </NavLi>
+        <NavLi>
           {user && (
-            <button onClick={(e) => history.push("/videos/add")}>
-              Add a Video
-            </button>
+            <Button onClick={(e) => history.push("/videos/add")}>
+              Add Video
+            </Button>
           )}
-        </li>
+        </NavLi>
         {!user && (
-          <li>
+          <NavLi>
             <NavLink to="/login" exact={true} activeClassName="active">
               Login
             </NavLink>
-          </li>
+          </NavLi>
         )}
-        <div></div>
         {!user && (
-          <li>
+          <NavLi>
             <NavLink to="/sign-up" exact={true} activeClassName="active">
               Sign Up
             </NavLink>
-          </li>
+          </NavLi>
         )}
-        <div></div>
         {user && (
-          <li>
+          <NavLi>
             <LogoutButton />
-          </li>
+          </NavLi>
         )}
       </ul>
     </nav>

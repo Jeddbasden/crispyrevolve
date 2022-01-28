@@ -33,12 +33,14 @@ img {
 }
 
 .section {
-  grid-column: 2 / span 2;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(auto, 250px));
-  grid-gap: 15px;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: -5px;
+  background-color: #E2E3E5;
+  padding: 30px;
 }
 
 .featured-videos {

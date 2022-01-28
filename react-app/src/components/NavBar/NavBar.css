@@ -10,11 +10,13 @@ nav {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .logo {
-  width: 50px;
+  width: 60px;
   height: auto;
-  border-radius: 25px;
+  border-radius: 25px; 
+  margin: 10px;
 }
