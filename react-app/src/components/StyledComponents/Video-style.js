@@ -8,9 +8,13 @@ export const VideoDiv = styled.div`
   height: 250px;
   margin: 10px;
   justify-content: flex-start;
-  align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  align-items: flex-start;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 15px;
   color: #d8d3d3;
+  background-color: #222226;
+  border-radius: 10px;
 `;
 export const ProfileImg = styled.img`
   border-radius: 25px;
@@ -22,6 +26,8 @@ export const ProfileImg = styled.img`
 export const VideoImg = styled.img`
   height: auto;
   width: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 export const VideoUl = styled.ul`

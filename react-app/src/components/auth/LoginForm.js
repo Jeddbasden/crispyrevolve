@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import DemoUserButton from './DemoUserButton'
-import { Form, FormDiv } from "../StyledComponents/Form-style";
+import { Form, FormInput, FormLabel, FormLabelInput, DivForm } from "../StyledComponents/Form-style";
+import { ContentDiv } from '../StyledComponents/Content-style';
+import { ButtonTwo } from '../StyledComponents/Button-style';
 
 
 const LoginForm = () => {
@@ -34,39 +36,41 @@ const LoginForm = () => {
   }
 
   return (
-    <FormDiv>
-      <Form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <input
-            name='email'
-            type='text'
-            placeholder='Email'
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            name='password'
-            type='password'
-            placeholder='Password'
-            value={password}
-            onChange={updatePassword}
-          />
-          <button type='submit'>Login</button>
-        </div>
-        <div>
-          <DemoUserButton />
-        </div>
-      </Form>
-    </FormDiv>
+    <ContentDiv>
+      <DivForm>
+        <Form onSubmit={onLogin}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <FormLabelInput>
+            <FormLabel htmlFor='email'>Email</FormLabel>
+            <FormInput
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
+          </FormLabelInput>
+          <FormLabelInput>
+            <FormLabel htmlFor='password'>Password</FormLabel>
+            <FormInput
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+            <ButtonTwo type='submit'>Login</ButtonTwo>
+          </FormLabelInput>
+          <div>
+            <DemoUserButton />
+          </div>
+        </Form>
+      </DivForm>
+    </ContentDiv>
   );
 };
 

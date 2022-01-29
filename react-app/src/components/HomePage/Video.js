@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { ProfileImg, VideoDiv, VideoImg, Username, VideoTitle } from "../StyledComponents/Video-style";
-
+import "./HomePage.css"
 const Video = ({ user, video }) => {
   const history = useHistory();
   return (
-    <li key={video?.id}>
+    <li className="pulse" key={video?.id}>
       <VideoDiv>
         <div>
           <VideoImg

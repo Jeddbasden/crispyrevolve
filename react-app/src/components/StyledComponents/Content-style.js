@@ -5,6 +5,7 @@ export const ContentDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: auto;
   align-items: center;
   background-color: #1c1c21;
 `;
@@ -20,6 +21,7 @@ export const SplashImgDiv = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  position: static;
 `;
 
 export const MainTitle = styled.h1`

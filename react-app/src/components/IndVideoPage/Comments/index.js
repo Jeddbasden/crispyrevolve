@@ -51,8 +51,12 @@ const Comments = ({ videoId }) => {
           return (
             <div>
               <p>{icomment.comment}</p>
-              <EditCommentButton comment={icomment} />
-              <DeleteCommentButton comment={icomment} />
+              {comment.userId === userId && (
+                <div>
+                  <EditCommentButton comment={icomment} />
+                  <DeleteCommentButton comment={icomment} />
+                </div>
+              )}
             </div>
           );
         })}

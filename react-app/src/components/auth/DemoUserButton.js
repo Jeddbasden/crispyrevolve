@@ -2,6 +2,7 @@ import React from "react";
 import { login } from "../../store/session";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { ButtonTwo } from "../StyledComponents/Button-style";
 
 
 
@@ -16,12 +17,12 @@ const DemoUserButton = () => {
   if (user) history.push('/')
   
   return (
-    <button
+    <ButtonTwo
       onClick={(e) => {
         e.preventDefault();
         loginDemo();
       }}
-    >Demo User</button>
+    >Demo User</ButtonTwo>
   )
 }
 

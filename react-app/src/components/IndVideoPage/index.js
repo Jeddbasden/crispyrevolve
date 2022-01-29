@@ -32,9 +32,7 @@ const IndVideoPage = () => {
   return (
     <ContentDiv>
       <PlayerDiv>
-        <YouTube
-          width={100}
-          height={100}
+        <YouTube className="youtube"
           video={youtubeId}
         />
       </PlayerDiv>
@@ -44,7 +42,7 @@ const IndVideoPage = () => {
       <div>
         <p>{video?.description}</p>
       </div>
-      {(videos?.length > 0 && user.id === video.userId)  && (
+      {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
         <div>
           <DeleteVideoButton video={video} />
           <EditVideoButton video={video} />
