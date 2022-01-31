@@ -2,6 +2,9 @@
 Hi! welcome to crispyrevolve the site where you can watch dope anime clips with a twist!
 head to https://crispyrevolve.herokuapp.com/ for the main version, for a local version follow the steps below!
 
+## Additions
+This site utilizes a react component called React Youtube Player. this component gets youtube links and is able to play youtube videos passed in.
+
 ## Set up locally
 * clone the repository
 * install dependancies using  
