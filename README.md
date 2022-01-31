@@ -42,3 +42,7 @@ pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.t
   ```bash
   npm start
   ```
+  
+  
+  ![image](https://user-images.githubusercontent.com/74204664/151825717-b0bdae38-116b-4f38-92d5-55cfab493022.png)
+
