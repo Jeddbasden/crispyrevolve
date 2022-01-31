@@ -27,10 +27,11 @@ export const ProfileImg = styled.img`
 `;
 
 export const VideoImg = styled.img`
-  height: auto;
+  height: 150px;
   width: 250px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  position: static;
 `;
 
 export const VideoUl = styled.ul`

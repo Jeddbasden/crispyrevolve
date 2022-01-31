@@ -51,3 +51,8 @@ export const CommentForm = styled.form`
   margin-bottom: 15px;
   background: linear-gradient(to bottom right, #5960e4, #1e3896);
 `;
+
+export const ErrorP = styled.p`
+  color: #2187ff;
+  font-family: "Catamaran", sans-serif;
+`;

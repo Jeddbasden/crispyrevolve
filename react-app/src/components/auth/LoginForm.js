@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import DemoUserButton from './DemoUserButton'
-import { Form, FormInput, FormLabel, FormLabelInput, DivForm } from "../StyledComponents/Form-style";
+import { Form, FormInput, FormLabel, FormLabelInput, ErrorP, DivForm } from "../StyledComponents/Form-style";
 import { ContentDiv } from '../StyledComponents/Content-style';
 import { ButtonTwo } from '../StyledComponents/Button-style';
 
@@ -41,7 +41,7 @@ const LoginForm = () => {
         <Form onSubmit={onLogin}>
           <div>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <ErrorP key={ind}>{error}</ErrorP>
             ))}
           </div>
           <FormLabelInput>
