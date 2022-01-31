@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment, getComments } from "../../../store/comments";
+import { useHistory } from "react-router-dom";
 import DeleteCommentButton from "./DeleteCommentButton";
 import EditCommentButton from "./EditCommentButton";
-import './Comments.css'
 import { ProfileImg, IndTitle, Username, IndCommentDiv } from "../../StyledComponents/Video-style";
 import { CommentForm, FormInput, FormLabel  } from "../../StyledComponents/Form-style";
 import { Button, ButtonTwo } from "../../StyledComponents/Button-style";
+import './Comments.css'
 
 const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const comments = useSelector(state => state.comments);
   const user = useSelector(state => state.session.user);
   const [comment, setComment] = useState("");
@@ -49,7 +51,15 @@ const Comments = ({ videoId }) => {
             type="text"
             name="comment"
             value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            onChange={(e) => {
+              if (!user) {
+                const confirmed = window.confirm("You need to login to make a comment would you like to now?")
+                if (confirmed) {
+                  return history.push('/login')
+                }
+              }
+              setComment(e.target.value)
+            }}
             required
           />
           <ButtonTwo type="submit">Add</ButtonTwo>
