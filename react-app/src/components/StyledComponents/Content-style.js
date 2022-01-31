@@ -38,6 +38,5 @@ export const MainTitle = styled.h1`
 `;
 
 export const SpacingDiv = styled.div`
-  height: 400px
+  height: 600px
 ` 
-
