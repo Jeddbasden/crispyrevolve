@@ -44,5 +44,6 @@ pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.t
   ```
   
   
-  ![image](https://user-images.githubusercontent.com/74204664/151825717-b0bdae38-116b-4f38-92d5-55cfab493022.png)
+ ![image](https://user-images.githubusercontent.com/74204664/151825850-183cc4bd-0123-4646-92d2-d919ff213136.png)
+
 
