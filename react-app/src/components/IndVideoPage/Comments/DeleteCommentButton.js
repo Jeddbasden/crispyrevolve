@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { deleteComment } from "../../../store/comments";
+import { Button } from "../../StyledComponents/Button-style";
 
 const DeleteCommentButton = ({comment}) => {
   const dispatch = useDispatch();
@@ -14,9 +15,9 @@ const DeleteCommentButton = ({comment}) => {
   };
 
   return (
-    <button id={comment?.id} type="button" onClick={remove}>
-      delete
-    </button>
+    <Button id={comment?.id} type="button" onClick={remove}>
+      <i className="far fa-trash-alt"></i>
+    </Button>
   );
 };
 

@@ -49,7 +49,7 @@ export const addVideo = (video) => async (dispatch) => {
 }
 
 export const deleteVideo = (video) => async (dispatch) => {
-  const res = await fetch("/api/videos/", {
+  const res = await fetch(`/api/videos/${video.id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

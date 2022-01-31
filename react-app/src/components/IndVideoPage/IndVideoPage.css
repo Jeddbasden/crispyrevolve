@@ -1,6 +1,14 @@
 .youtube {
   width: 100%;
-  height: 400px;
-  z-index: 1;
-  position: absolute;
+  height: 100%;
+}
+
+.imgTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #2187ff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { useDispatch} from "react-redux"
 import { useHistory } from "react-router-dom";
 import { deleteVideo } from "../../store/videos";
+import { Button } from "../StyledComponents/Button-style";
 
 const DeleteVideoButton = ({ video }) => {
   const dispatch = useDispatch();
@@ -18,8 +19,10 @@ const DeleteVideoButton = ({ video }) => {
   }
 
   return (
-    <button id={video.id} type="button" onClick={remove}>delete</button>
-  )
+    <Button id={video.id} type="button" onClick={remove}>
+      <i className="far fa-trash-alt"></i>
+    </Button>
+  );
 }
 
 export default DeleteVideoButton;

@@ -15,6 +15,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import "./index.css";
 import { getVideos } from './store/videos';
+import Footer from './components/Footer';
 
 
 
@@ -38,6 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <Footer />
         <Switch>
           <Route path="/login" exact={true}>
             <LoginForm />

@@ -15,16 +15,13 @@ const NavBar = () => {
   return (
     <nav>
       <TitleDiv onClick={() => history.push("/")}>
-        <img
-          className="logo"
-          src={logo}
-        />
+        <img className="logo" src={logo} />
         <Title>CrispyRevolve</Title>
       </TitleDiv>
       <ul className="navUl">
         <NavLi>
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            <i className="fas fa-home"></i>
           </NavLink>
         </NavLi>
         <NavLi>

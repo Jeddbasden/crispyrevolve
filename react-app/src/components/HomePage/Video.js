@@ -5,7 +5,12 @@ const Video = ({ user, video }) => {
   const history = useHistory();
   return (
     <li className="pulse" key={video?.id}>
-      <VideoDiv>
+      <VideoDiv
+        onClick={(e) => {
+          e.preventDefault();
+          history.push(`/videos/${video?.id}`);
+        }}
+      >
         <div>
           <VideoImg
             className="videoImg"
@@ -20,7 +25,7 @@ const Video = ({ user, video }) => {
         <div className="videoInfo">
           <div className="title-profileDiv">
             <div>
-            <ProfileImg src={user?.profileImg} />
+              <ProfileImg src={user?.profileImg} />
             </div>
             <div className="videoTitle">
               <VideoTitle>{video?.title}</VideoTitle>

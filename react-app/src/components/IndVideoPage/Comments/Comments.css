@@ -1,0 +1,28 @@
+.commentsTitle {
+  color: #2187ff;
+}
+
+.allComments {
+  width: 100%;
+}
+
+.profileUser {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profileComment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

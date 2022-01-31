@@ -38,13 +38,10 @@ def add_video():
   return form.errors
 
 
-@videos_routes.route('/', methods=['DELETE'])
+@videos_routes.route('/<int:videoId>', methods=['DELETE'])
 @login_required
-def delete_video():
-  data = request.json['video']
-  id = data['id']
-
-  video = Video.query.get(id)
+def delete_video(videoId):
+  video = Video.query.get(videoId)
   db.session.delete(video)
   db.session.commit()
   

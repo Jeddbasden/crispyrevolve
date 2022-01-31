@@ -1,10 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { ButtonTwo } from "../../StyledComponents/Button-style";
 
 const EditCommentButton = ({ comment }) => {
   const history = useHistory();
   return (
-    <button
+    <ButtonTwo
       id={comment?.id}
       type="button"
       onClick={(e) => {
@@ -12,8 +13,8 @@ const EditCommentButton = ({ comment }) => {
         return history.push(`/comments/${comment?.id}/edit`);
       }}
     >
-      edit
-    </button>
+      <i className="fas fa-edit"></i>
+    </ButtonTwo>
   );
 };
 

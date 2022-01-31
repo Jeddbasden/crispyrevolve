@@ -10,6 +10,7 @@ import Comments from "./Comments/index";
 import YouTube from "@u-wave/react-youtube";
 import { ContentDiv } from "../StyledComponents/Content-style";
 import { PlayerDiv } from "../StyledComponents/Player-style";
+import { IndDetails, ProfileImg, IndTitle, CommentsDiv } from "../StyledComponents/Video-style";
 import './IndVideoPage.css'
 
 
@@ -36,21 +37,26 @@ const IndVideoPage = () => {
           video={youtubeId}
         />
       </PlayerDiv>
-      <div>
-        <h1>{video?.title}</h1>
-      </div>
-      <div>
-        <p>{video?.description}</p>
-      </div>
-      {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
+      <IndDetails>
+        <IndTitle>
+          <div className="imgTitle">
+            <ProfileImg src={user?.profileImg}/>
+            <h1>{video?.title}</h1>
+          </div>
+        {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
+          <div>
+            <DeleteVideoButton video={video} />
+            <EditVideoButton video={video} />
+          </div>
+        )}
+        </IndTitle>
         <div>
-          <DeleteVideoButton video={video} />
-          <EditVideoButton video={video} />
+          <p>{video?.description}</p>
         </div>
-      )}
-      <div>
+      </IndDetails>
+      <CommentsDiv>
         <Comments videoId={ video.id }/>
-      </div>
+      </CommentsDiv>
     </ContentDiv>
   );
 }

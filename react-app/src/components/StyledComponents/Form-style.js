@@ -38,3 +38,16 @@ export const FormLabelInput = styled.div`
 export const DivForm = styled.div`
   height: 800px;
 `
+export const CommentForm = styled.form`
+  width: auto;
+  padding: 0px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background: linear-gradient(to bottom right, #5960e4, #1e3896);
+`;

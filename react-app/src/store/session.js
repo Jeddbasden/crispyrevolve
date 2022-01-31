@@ -71,7 +71,6 @@ export const logout = () => async (dispatch) => {
 
 
 export const signUp = (username, email, password, profileImg) => async (dispatch) => {
-  console.log("~~~~  PROFILE IMAGE ~~~~", profileImg)
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
