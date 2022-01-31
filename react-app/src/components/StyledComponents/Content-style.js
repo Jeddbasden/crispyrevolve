@@ -35,3 +35,7 @@ export const MainTitle = styled.h1`
   font-family: "Catamaran", sans-serif;
   font-style: italic;
 `;
+
+export const SpacingDiv = styled.div`
+  height: 400px
+` 

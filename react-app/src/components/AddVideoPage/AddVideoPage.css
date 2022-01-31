@@ -1,0 +1,10 @@
+.spacingDiv {
+  height: 250px;
+}
+
+.textareaThing {
+  display: block;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: -5px 5px rgba(0, 0, 0, 0.142);
+}

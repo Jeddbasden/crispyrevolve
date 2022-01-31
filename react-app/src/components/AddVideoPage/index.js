@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addVideo } from "../../store/videos";
 import { useHistory } from "react-router-dom";
-
+import { Form, FormInput, FormLabel, FormLabelInput } from "../StyledComponents/Form-style";
+import { ButtonTwo } from "../StyledComponents/Button-style";
+import { ContentDiv } from "../StyledComponents/Content-style";
+import "./AddVideoPage.css"
 
 const AddVideoPage = () => {
   const dispatch = useDispatch();
@@ -27,51 +30,53 @@ const AddVideoPage = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={submit}>
-        <div>
-          <label>Title</label>
-          <input
+    <ContentDiv>
+      <Form onSubmit={submit}>
+        <FormLabelInput>
+          <FormLabel>Title</FormLabel>
+          <FormInput
             type='text'
             name='title'
             value={title}
             onChange={e => setTitle(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Video Url</label>
-          <input
+        </FormLabelInput>
+        <FormLabelInput>
+          <FormLabel>Video Url</FormLabel>
+          <FormInput
             type='text'
             name='videoUrl'
             value={videoUrl}
             onChange={e => setVideoUrl(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Description</label>
+        </FormLabelInput>
+        <FormLabelInput>
+          <FormLabel>Description</FormLabel>
           <textarea
+            className="textareaThing"
             type='text'
             name='description'
             value={description}
             onChange={e => setDescription(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Image Url</label>
-          <input
+        </FormLabelInput>
+        <FormLabelInput>
+          <FormLabel>Image Url</FormLabel>
+          <FormInput
             type='text'
             name='imgUrl'
             value={imgUrl}
             onChange={e => setImgUrl(e.target.value)}
             required
           />
-        </div>
-        <button type='submit'>submit</button>
-      </form>
-    </div>
+        </FormLabelInput>
+        <ButtonTwo type='submit'>submit</ButtonTwo>
+      </Form>
+      <div className="spacingDiv"></div>
+    </ContentDiv>
   )
 }
 

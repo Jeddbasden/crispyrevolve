@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getVideos, editVideo } from "../../store/videos";
-
+import { Form, FormLabel, FormInput,FormLabelInput } from "../StyledComponents/Form-style";
+import { ButtonTwo } from "../StyledComponents/Button-style";
+import { ContentDiv } from "../StyledComponents/Content-style";
+import './EditVideoPage.css'
 
 const EditVideoPage = () => {
   const videos = useSelector(state => state.videos)
@@ -31,41 +34,43 @@ const EditVideoPage = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submit}>
-        <div>
-          <label>Title</label>
-          <input
+    <ContentDiv>
+      <Form onSubmit={submit}>
+        <FormLabelInput>
+          <FormLabel>Title</FormLabel>
+          <FormInput
             type="text"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Description</label>
+        </FormLabelInput>
+        <FormLabelInput>
+          <FormLabel>Description</FormLabel>
           <textarea
+            className="textareaThing"
             type="text"
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label>Image Url</label>
-          <input
+        </FormLabelInput>
+        <FormLabelInput>
+          <FormLabel>Image Url</FormLabel>
+          <FormInput
             type="text"
             name="imgUrl"
             value={imgUrl}
             onChange={(e) => setImgUrl(e.target.value)}
             required
           />
-        </div>
-        <button type="submit">Done</button>
-      </form>
-    </div>
+        </FormLabelInput>
+        <ButtonTwo type="submit">submit</ButtonTwo>
+      </Form>
+      <div className="spacingDiv"></div>
+    </ContentDiv>
   );
 }
 

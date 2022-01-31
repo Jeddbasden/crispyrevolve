@@ -33,15 +33,15 @@ const NavBar = () => {
         </NavLi>
         {!user && (
           <NavLi>
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
+            <NavLink to="/login" exact={true} className="auth">
+              <i className="fas fa-sign-in-alt"></i>
             </NavLink>
           </NavLi>
         )}
         {!user && (
           <NavLi>
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
+            <NavLink to="/sign-up" exact={true} className="auth">
+              <i className="fas fa-user-plus"></i>
             </NavLink>
           </NavLi>
         )}

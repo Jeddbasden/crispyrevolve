@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getComments, editComment } from "../../store/comments";
+import { ContentDiv, SpacingDiv } from "../StyledComponents/Content-style";
+import { ButtonTwo } from "../StyledComponents/Button-style";
+import { Form, FormLabel, FormInput, FormLabelInput } from "../StyledComponents/Form-style";
+import "./EditCommentPage.css"
+
 
 const EditCommentPage = () => {
   const dispatch = useDispatch();
@@ -24,19 +29,20 @@ const EditCommentPage = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={submit}>
-        <label>Edit Comment</label>
-        <input
+    <ContentDiv>
+      <Form onSubmit={submit}>
+        <FormLabel>Edit Comment</FormLabel>
+        <FormInput
           type="text"
           name="comment"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-        <button type="submit">Add</button>
-      </form>
-    </div>
+        <ButtonTwo type="submit">Add</ButtonTwo>
+      </Form>
+      <SpacingDiv></SpacingDiv>
+    </ContentDiv>
   );
 };
 
