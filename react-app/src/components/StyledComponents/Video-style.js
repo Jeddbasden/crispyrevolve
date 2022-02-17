@@ -7,6 +7,7 @@ export const VideoDiv = styled.div`
   width: 250px;
   height: 250px;
   margin: 10px;
+  contain: content;
   justify-content: flex-start;
   align-items: flex-start;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -52,6 +53,7 @@ export const Username = styled.p`
 `;
 
 export const VideoTitle = styled.p`
+  margin: 2px;
   color: #2187ff;
   font-size: 15px;
   font-weight: 900;

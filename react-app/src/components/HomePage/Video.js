@@ -24,15 +24,13 @@ const Video = ({ user, video }) => {
         </div>
         <div className="videoInfo">
           <div className="title-profileDiv">
-            <div>
+            <div className="proUser">
               <ProfileImg src={user?.profileImg} />
+              <Username>{user?.username}</Username>
             </div>
             <div className="videoTitle">
               <VideoTitle>{video?.title}</VideoTitle>
             </div>
-          </div>
-          <div>
-            <Username>{user?.username}</Username>
           </div>
         </div>
       </VideoDiv>
