@@ -52,8 +52,22 @@ export const Username = styled.p`
 `;
 
 export const VideoTitle = styled.p`
+  color: #2187ff;
+  font-size: 15px;
+  font-weight: 900;
+  font-family: "Catamaran", sans-serif;
+  font-style: italic;
+`;
+
+export const IndVideoTitle = styled.p`
   margin: 2px;
-`
+  color: #2187ff;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: 900;
+  font-family: "Catamaran", sans-serif;
+  font-style: italic;
+`;
 export const IndDetails = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,6 +75,7 @@ export const IndDetails = styled.div`
   width: 100%;
   align-items: flex-start;
   color: #2187ff;
+  padding: 0px 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
@@ -91,5 +106,6 @@ export const IndCommentDiv = styled.div`
   align-items: center;
   width: 100%;
   color: #2187ff;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0px 15px
 `;

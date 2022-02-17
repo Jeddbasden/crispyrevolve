@@ -9,5 +9,6 @@ export const FooterDiv = styled.div`
   background: linear-gradient(to right, #480ca8, #000000);
   position: fixed;
   bottom: 0px;
+  padding: 10px;
   z-index: 1;
 `;

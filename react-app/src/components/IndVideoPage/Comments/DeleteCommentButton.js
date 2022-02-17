@@ -11,6 +11,7 @@ const DeleteCommentButton = ({comment}) => {
     const confirmed = window.confirm('are you sure you want to delete this comment?');
     if (confirmed) {
       await dispatch(deleteComment(comment));
+      alert("Comment has been deleted!");
     }
   };
 
