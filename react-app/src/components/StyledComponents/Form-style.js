@@ -26,6 +26,8 @@ export const FormLabel = styled.label`
   text-align: center;
   padding: 15px;
   font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
 
 export const FormLabelInput = styled.div`
@@ -55,4 +57,16 @@ export const CommentForm = styled.form`
 export const ErrorP = styled.p`
   color: #2187ff;
   font-family: "Catamaran", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
 `;
+
+export const ErrorDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+`

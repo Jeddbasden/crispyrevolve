@@ -39,7 +39,7 @@ const EditCommentPage = () => {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-        <ButtonTwo type="submit">Add</ButtonTwo>
+        <ButtonTwo type="submit">Done</ButtonTwo>
       </Form>
       <SpacingDiv></SpacingDiv>
     </ContentDiv>
