@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
-import { Form, FormInput, FormLabel, FormLabelInput, DivForm } from '../StyledComponents/Form-style';
+import { Form, FormInput, FormLabel, FormLabelInput, DivForm, ErrorP, ErrorDiv } from '../StyledComponents/Form-style';
 import { ContentDiv } from '../StyledComponents/Content-style';
 import { ButtonTwo } from '../StyledComponents/Button-style';
+import { CommentsDiv } from '../StyledComponents/Video-style';
 
 
 const SignUpForm = () => {
@@ -22,6 +23,10 @@ const SignUpForm = () => {
     if (password !== repeatPassword) {
       alert("Passwords must match!");
     } 
+
+    if (!profileImg) setProfileImg(
+      "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
+    );
 
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password, profileImg));
@@ -60,34 +65,36 @@ const SignUpForm = () => {
     <ContentDiv>
       <DivForm>
         <Form onSubmit={onSignUp}>
-          <div>
+          <ErrorDiv>
             {errors.map((error, ind) => (
-              <FormLabel key={ind}>{error}</FormLabel>
+              <ErrorP key={ind}>{error}</ErrorP>
             ))}
-          </div>
+          </ErrorDiv>
           <FormLabelInput>
             <FormLabel>User Name</FormLabel>
             <FormInput
-              type='text'
-              name='username'
+              type="text"
+              name="username"
               onChange={updateUsername}
               value={username}
+              required={true}
             ></FormInput>
           </FormLabelInput>
           <FormLabelInput>
             <FormLabel>Email</FormLabel>
             <FormInput
-              type='text'
-              name='email'
+              type="email"
+              name="email"
               onChange={updateEmail}
               value={email}
+              required={true}
             ></FormInput>
           </FormLabelInput>
           <FormLabelInput>
             <FormLabel>Profile Image URl</FormLabel>
             <FormInput
-              type='text'
-              name='profileImg'
+              type="text"
+              name="profileImg"
               onChange={updateProfileImg}
               value={profileImg}
             ></FormInput>
@@ -95,23 +102,24 @@ const SignUpForm = () => {
           <FormLabelInput>
             <FormLabel>Password</FormLabel>
             <FormInput
-              type='password'
-              name='password'
+              type="password"
+              name="password"
               onChange={updatePassword}
               value={password}
+              required={true}
             ></FormInput>
           </FormLabelInput>
           <FormLabelInput>
             <FormLabel>Repeat Password</FormLabel>
             <FormInput
-              type='password'
-              name='repeat_password'
+              type="password"
+              name="repeat_password"
               onChange={updateRepeatPassword}
               value={repeatPassword}
               required={true}
             ></FormInput>
           </FormLabelInput>
-          <ButtonTwo type='submit'>Sign Up</ButtonTwo>
+          <ButtonTwo type="submit">Sign Up</ButtonTwo>
         </Form>
       </DivForm>
     </ContentDiv>

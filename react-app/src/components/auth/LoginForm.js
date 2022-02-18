@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import DemoUserButton from './DemoUserButton'
-import { Form, FormInput, FormLabel, FormLabelInput, ErrorP, DivForm } from "../StyledComponents/Form-style";
+import { Form, FormInput, FormLabel, FormLabelInput, ErrorP, DivForm, ErrorDiv } from "../StyledComponents/Form-style";
 import { ContentDiv } from '../StyledComponents/Content-style';
 import { ButtonTwo } from '../StyledComponents/Button-style';
 
@@ -39,16 +39,16 @@ const LoginForm = () => {
     <ContentDiv>
       <DivForm>
         <Form onSubmit={onLogin}>
-          <div>
+          <ErrorDiv>
             {errors.map((error, ind) => (
               <ErrorP key={ind}>{error}</ErrorP>
             ))}
-          </div>
+          </ErrorDiv>
           <FormLabelInput>
             <FormLabel htmlFor='email'>Email</FormLabel>
             <FormInput
               name='email'
-              type='text'
+              type='email'
               placeholder='Email'
               value={email}
               onChange={updateEmail}
