@@ -8,7 +8,7 @@ export const ContentDiv = styled.div`
   height: auto;
   align-items: center;
   background-color: #1c1c21;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 `;
 
 export const SplashImgDiv = styled.div`

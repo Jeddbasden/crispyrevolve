@@ -31,7 +31,7 @@ def add_comments():
     db.session.add(newCommment)
     db.session.commit()
 
-    comments = Comment.query.filter(Comment.videoId == videoId).all()
+    comments = Comment.query.filter(Comment.videoId == videoId).all().orderBy(cre)
     comments = [item.to_dict() for item in comments]
     return{'comments': comments}
 
