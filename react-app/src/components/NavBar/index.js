@@ -8,6 +8,7 @@ import logo from '../../assets/logo.jpg'
 import { Title, TitleDiv } from '../StyledComponents/title-style';
 import { NavLi } from '../StyledComponents/Nav-style';
 import './NavBar.css'
+import ProfileButton from '../auth/ProfileButton';
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
@@ -47,7 +48,7 @@ const NavBar = () => {
         )}
         {user && (
           <NavLi>
-            <LogoutButton />
+            <ProfileButton />
           </NavLi>
         )}
       </ul>

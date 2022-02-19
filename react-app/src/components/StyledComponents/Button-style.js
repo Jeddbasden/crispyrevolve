@@ -17,3 +17,13 @@ export const ButtonTwo = styled.button`
   border-radius: 10px;
   padding: 3px;
 `;
+
+export const ProfileButtonBtn = styled.button`
+display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #2187ff;
+  align-items: center;
+  justify-content: center;
+`;

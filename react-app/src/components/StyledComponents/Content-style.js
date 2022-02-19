@@ -5,7 +5,7 @@ export const ContentDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: auto;
+  height: 100%;
   align-items: center;
   background-color: #1c1c21;
   padding-bottom: 80px;
