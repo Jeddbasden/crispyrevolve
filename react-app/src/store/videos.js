@@ -2,9 +2,15 @@ const GET_VIDEOS = 'videos/GET_VIDEOS'
 const ADD_VIDEO = 'videos/ADD_VIDEO'
 const DELETE_VIDEO = 'videos/DELETE_VIDEO'
 const EDIT_VIDEO = 'videos/EDIT_VIDEO'
+const GET_USER_VIDEOS = 'videos/GET_USER_VIDEOS'
 
 const get_videos = (data) => ({
   type: GET_VIDEOS,
+  data,
+})
+
+const get_user_videos = (data) => ({
+  type: get_user_videos,
   data,
 })
 
@@ -30,6 +36,10 @@ export const getVideos = () => async (dispatch) => {
   await dispatch(get_videos(data));
 }
 
+export const getUserVideos = () => async (dispatch) => {
+
+}
+
 export const addVideo = (video) => async (dispatch) => {
   const res = await fetch('/api/videos/', {
     method: "POST",
@@ -47,6 +57,8 @@ export const addVideo = (video) => async (dispatch) => {
   const data = await res.json()
   await dispatch(add_video(data))
 }
+
+
 
 export const deleteVideo = (video) => async (dispatch) => {
   const res = await fetch(`/api/videos/${video.id}`, {

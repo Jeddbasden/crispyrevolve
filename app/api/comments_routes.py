@@ -8,8 +8,9 @@ comments_routes = Blueprint('comments', __name__)
 
 @comments_routes.route('/<int:videoId>')
 def get_comments(videoId):
-  comments = Comment.query.filter(Comment.videoId == videoId).all()
-  comments = [item.to_dict() for item in comments]
+  comments = Comment.query.order_by(Comment.id).all()
+
+  comments = [item.to_dict() for item in comments if item.videoId == videoId]
   return{'comments': comments}
 
 

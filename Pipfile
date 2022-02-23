@@ -7,6 +7,10 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+
 [packages]
 click = "==7.1.2"
 gunicorn = "==20.1.0"
@@ -33,6 +37,9 @@ psycopg2-binary = "==2.9.3"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"
+pylint = "*"
+pycodestyle = "*"
+rope = "*"
 
 [requires]
 python_version = "3.9"
