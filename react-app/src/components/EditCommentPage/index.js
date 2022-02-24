@@ -30,6 +30,7 @@ const EditCommentPage = () => {
 
   return (
     <ContentDiv>
+      <SpacingDiv></SpacingDiv>
       <Form onSubmit={submit}>
         <FormLabel>Edit Comment</FormLabel>
         <FormInput
