@@ -46,7 +46,7 @@ const NavBar = () => {
             </NavLink>
           </NavLi>
         )}
-        {user && (
+        {/* {user && (
           <NavLi>
             <ProfileButtonBtn onClick={(e) => {
               e.preventDefault()
@@ -55,7 +55,7 @@ const NavBar = () => {
               <i class="fa-duotone fa-user-astronaut"></i>
             </ProfileButtonBtn>
           </NavLi>
-        )}
+        )} */}
       </ul>
     </nav>
   );
