@@ -24,7 +24,7 @@ const SignUpForm = () => {
       alert("Passwords must match!");
     } 
 
-    if (!profileImg) setProfileImg(
+    if (profileImg === '') setProfileImg(
       "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
     );
 

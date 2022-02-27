@@ -37,6 +37,7 @@ const ProfilePage = () => {
   return (
     <ContentDiv>
       <BackgroundDiv>
+        <img src={user?.backgroundImg} />
       </BackgroundDiv>
       <ProfileInfoDiv>
         <ProfileImg src={user?.profileImg} />

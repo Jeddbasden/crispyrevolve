@@ -43,12 +43,8 @@ export const SpacingDiv = styled.div`
 
 export const BackgroundDiv = styled.div`
   display: flex;
-  background-image: url("https://i.pinimg.com/originals/50/d6/65/50d66570e5b92307d80313e0a07f5701.jpg");
   justify-content: center;
-  background-position: bottom;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: top;
   position: static;
   align-items: center;
   width: 100%;
