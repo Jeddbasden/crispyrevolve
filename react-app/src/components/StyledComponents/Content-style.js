@@ -38,5 +38,20 @@ export const MainTitle = styled.h1`
 `;
 
 export const SpacingDiv = styled.div`
-  height: 600px
-` 
+  height: 600px;
+` ;
+
+export const BackgroundDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  position: top;
+  position: static;
+  align-items: center;
+  width: 100%;
+  height: 375px;
+  contain: content;
+`;
+
+export const ProfileInfoDiv = styled.div`
+  
+`

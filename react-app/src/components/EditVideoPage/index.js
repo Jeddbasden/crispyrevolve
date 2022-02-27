@@ -35,6 +35,7 @@ const EditVideoPage = () => {
 
   return (
     <ContentDiv>
+      <SpacingDiv></SpacingDiv>
       <Form onSubmit={submit}>
         <FormLabelInput>
           <FormLabel>Title</FormLabel>

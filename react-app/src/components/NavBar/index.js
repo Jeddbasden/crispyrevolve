@@ -1,18 +1,31 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+
+
 import LogoutButton from '../auth/LogoutButton';
+import { logout } from '../../store/session';
+
 import { Button, ProfileButtonBtn } from '../StyledComponents/Button-style'
-import logo from '../../assets/logo.jpg'
 import { Title, TitleDiv } from '../StyledComponents/title-style';
 import { NavLi } from '../StyledComponents/Nav-style';
+
+import logo from '../../assets/logo.jpg'
 import './NavBar.css'
+// import ProfileButton from '../auth/ProfileButton';
 
 const NavBar = () => {
-  const user = useSelector(state => state.session.user)
-  const history = useHistory()
+  const user = useSelector(state => state.session.user);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const onLogout = async (e) => {
+    await dispatch(logout());
+    return history.push("/");
+  };
+
   return (
     <nav>
       <TitleDiv onClick={() => history.push("/")}>
@@ -52,7 +65,17 @@ const NavBar = () => {
 
         {user && (
           <NavLi>
-            <LogoutButton />
+            <NavLink to={`users/${user.id}`} exact={true}>
+              <i className="fa-duotone fa-user-astronaut fa-lg"></i>
+            </NavLink>
+          </NavLi>
+        )}
+        {user && (
+          <NavLi>
+            <i
+              className="fa-solid fa-arrow-right-from-bracket fa-lg"
+              onClick={onLogout}
+            ></i>
           </NavLi>
         )}
 
