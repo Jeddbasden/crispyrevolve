@@ -63,29 +63,20 @@ const NavBar = () => {
           </NavLi>
         )}
 
-        {user && (
+        {/* {user && (
           <NavLi>
             <NavLink to={`users/${user.id}`} exact={true}>
               <i className="fa-duotone fa-user-astronaut fa-lg"></i>
             </NavLink>
           </NavLi>
-        )}
+        )} */}
+
         {user && (
           <NavLi>
-            <i
-              className="fa-solid fa-arrow-right-from-bracket fa-lg"
-              onClick={onLogout}
-            ></i>
+            <LogoutButton />
           </NavLi>
         )}
 
-        {/* {user && (
-          <NavLi>
-            <ProfileButtonBtn onClick={() => history.push(`/users/${user.id}`)}>
-              <FontAwesomeIcon icon="fa-solid fa-user" />
-            </ProfileButtonBtn>
-          </NavLi>
-        )} */}
       </ul>
     </nav>
   );
