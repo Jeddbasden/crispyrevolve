@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   flex-direction: row;
@@ -31,4 +32,9 @@ nav {
 
 .auth {
   font-size: bold;
+}
+
+.fa-user-astronaut {
+  color: #2187ff;
+  font-weight: 500;
 }
