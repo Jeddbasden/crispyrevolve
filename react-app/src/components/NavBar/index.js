@@ -1,14 +1,14 @@
 
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-import { Button } from '../StyledComponents/Button-style'
+import { Button, ProfileButtonBtn } from '../StyledComponents/Button-style'
 import logo from '../../assets/logo.jpg'
 import { Title, TitleDiv } from '../StyledComponents/title-style';
 import { NavLi } from '../StyledComponents/Nav-style';
 import './NavBar.css'
-import ProfileButton from '../auth/ProfileButton';
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
@@ -25,6 +25,7 @@ const NavBar = () => {
             <i className="fas fa-home"></i>
           </NavLink>
         </NavLi>
+
         <NavLi>
           {user && (
             <Button onClick={(e) => history.push("/videos/add")}>
@@ -32,6 +33,7 @@ const NavBar = () => {
             </Button>
           )}
         </NavLi>
+
         {!user && (
           <NavLi>
             <NavLink to="/login" exact={true} className="auth">
@@ -39,6 +41,7 @@ const NavBar = () => {
             </NavLink>
           </NavLi>
         )}
+
         {!user && (
           <NavLi>
             <NavLink to="/sign-up" exact={true} className="auth">
@@ -46,11 +49,20 @@ const NavBar = () => {
             </NavLink>
           </NavLi>
         )}
+
         {user && (
           <NavLi>
-            <ProfileButton />
+            <LogoutButton />
           </NavLi>
         )}
+
+        {/* {user && (
+          <NavLi>
+            <ProfileButtonBtn onClick={() => history.push(`/users/${user.id}`)}>
+              <FontAwesomeIcon icon="fa-solid fa-user" />
+            </ProfileButtonBtn>
+          </NavLi>
+        )} */}
       </ul>
     </nav>
   );
