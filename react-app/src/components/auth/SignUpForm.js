@@ -18,33 +18,15 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
-  const onSignUp = async (e) => {
-    e.preventDefault();
-    if (password !== repeatPassword) {
-      alert("Passwords must match!");
-    } 
-
-    if (profileImg === '') setProfileImg(
-      "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
-    );
-
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, profileImg));
-      if (data) {
-        setErrors(data)
-      }
-    }
-
-  };
-
+  
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
-
+  
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
-
+  
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -57,6 +39,31 @@ const SignUpForm = () => {
     setProfileImg(e.target.value);
   }
 
+  const onSignUp = async (e) => {
+    e.preventDefault();
+    if (password !== repeatPassword) {
+      alert("Passwords must match!");
+    } 
+
+    console.log("!!!!!! PRFIEL IMAFE 1!!!!!",profileImg)
+    if (!profileImg) {
+      console.log("!!!!!! PRFIEL IMAFE 2!!!!!",profileImg)
+      setProfileImg(
+        "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
+      )
+      console.log("!!!!! PROFILE IMAGE 3 !!!!!!", profileImg)
+    };
+    console.log("!!!!! PROFILE IMAGE4 !!!!!!", profileImg)
+
+    if (password === repeatPassword) {
+      const data = await dispatch(signUp(username, email, password, profileImg));
+      if (data) {
+        setErrors(data)
+      }
+    }
+
+  };
+  
   if (user) {
     return <Redirect to='/' />;
   }

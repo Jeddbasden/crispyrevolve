@@ -69,7 +69,7 @@ const Comments = ({ videoId }) => {
         comments?.map((icomment) => {
           const commentUser = users.find(user => user?.id === icomment?.userId)
           return (
-            <IndCommentDiv>
+            <IndCommentDiv key={icomment?.id}>
               <div className="profileComment">
                 <ProfileImg src={commentUser?.profileImg}/>
                 <div className="profileUser">

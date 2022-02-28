@@ -11,6 +11,11 @@ export const Title = styled.h1`
 `;
 
 
+// -make buttons and comments and username for comments alittle bigger
+// -logo a little bigger
+
+
+
 export const TitleDiv = styled.div`
   display: flex;
   flex-direction: row;

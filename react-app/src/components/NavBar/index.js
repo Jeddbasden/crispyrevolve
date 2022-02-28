@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 
@@ -37,6 +38,7 @@ const NavBar = () => {
             <i className="fas fa-home"></i>
           </NavLink>
         </NavLi>
+
         <NavLi>
           {user && (
             <Button onClick={(e) => history.push("/videos/add")}>
@@ -44,6 +46,7 @@ const NavBar = () => {
             </Button>
           )}
         </NavLi>
+
         {!user && (
           <NavLi>
             <NavLink to="/login" exact={true} className="auth">
@@ -51,6 +54,7 @@ const NavBar = () => {
             </NavLink>
           </NavLi>
         )}
+
         {!user && (
           <NavLi>
             <NavLink to="/sign-up" exact={true} className="auth">
@@ -58,21 +62,21 @@ const NavBar = () => {
             </NavLink>
           </NavLi>
         )}
-        {user && (
+
+        {/* {user && (
           <NavLi>
             <NavLink to={`users/${user.id}`} exact={true}>
               <i className="fa-duotone fa-user-astronaut fa-lg"></i>
             </NavLink>
           </NavLi>
-        )}
+        )} */}
+
         {user && (
           <NavLi>
-            <i
-              className="fa-solid fa-arrow-right-from-bracket fa-lg"
-              onClick={onLogout}
-            ></i>
+            <LogoutButton />
           </NavLi>
         )}
+
       </ul>
     </nav>
   );
