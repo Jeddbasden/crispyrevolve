@@ -111,3 +111,16 @@ export const IndCommentDiv = styled.div`
   margin-bottom: 10px;
   padding: 0px 15px
 `;
+
+export const DescriptionTitle = styled.p`
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2187ff;
+  font-size: 20px;
+  padding: 0px 20px;
+  font-weight: 900;
+  font-family: "Catamaran", sans-serif;
+  font-style: italic;
+`;

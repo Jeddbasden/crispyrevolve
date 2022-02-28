@@ -52,6 +52,12 @@ export const BackgroundDiv = styled.div`
   contain: content;
 `;
 
-export const ProfileInfoDiv = styled.div`
-  
-`
+export const DescriptionDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #202020;
+  width: 100%;
+  height: auto;
+`;

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
 import { getVideos } from '../../store/videos'
-import { ContentDiv, SplashImgDiv, MainTitle } from '../StyledComponents/Content-style'
+import { ContentDiv, SplashImgDiv, MainTitle, DescriptionDiv } from '../StyledComponents/Content-style'
 import { Title } from '../StyledComponents/title-style'
-import { VideoUl } from "../StyledComponents/Video-style";
+import { DescriptionTitle, VideoUl } from "../StyledComponents/Video-style";
 import Video from "./Video";
 
 // import "~video-react/dist/video-react.css";
@@ -33,6 +33,12 @@ const HomePage = () => {
       <SplashImgDiv>
         <MainTitle>welcome to crispyrevolve!</MainTitle>
       </SplashImgDiv>
+      <DescriptionDiv>
+        <DescriptionTitle>
+          Welcome to CrispyRevolve the place to watch and upload your favorite youtube anime clips!
+          <br></br>Upload your clips or just sit back and watch!
+        </DescriptionTitle>
+      </DescriptionDiv>
       <div className="featured-videos">
         <Title>Featured Videos</Title>
       </div>
