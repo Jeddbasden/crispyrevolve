@@ -45,18 +45,14 @@ const SignUpForm = () => {
       alert("Passwords must match!");
     } 
 
-    console.log("!!!!!! PRFIEL IMAFE 1!!!!!",profileImg)
-    if (!profileImg) {
-      console.log("!!!!!! PRFIEL IMAFE 2!!!!!",profileImg)
-      setProfileImg(
-        "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
-      )
-      console.log("!!!!! PROFILE IMAGE 3 !!!!!!", profileImg)
-    };
-    console.log("!!!!! PROFILE IMAGE4 !!!!!!", profileImg)
+    let profileImgUrl =
+      profileImg === ""
+        ? "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
+        : profileImg;
+
 
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, profileImg));
+      const data = await dispatch(signUp(username, email, password, profileImgUrl));
       if (data) {
         setErrors(data)
       }
