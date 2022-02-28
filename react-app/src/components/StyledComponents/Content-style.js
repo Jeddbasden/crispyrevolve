@@ -16,7 +16,7 @@ export const SplashImgDiv = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-image: url("https://images7.alphacoders.com/740/740615.png");
   background-position: top;
   background-attachment: fixed;
