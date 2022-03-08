@@ -34,6 +34,7 @@ def add_video():
 
     db.session.add(video)
     db.session.commit()
+    
     return video.to_dict()
   return form.errors
 
