@@ -11,19 +11,17 @@ import "./ProfilePage.css"
 const ProfilePage = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
-
-    let user;
+    const [ user, setUser ] = useState({})
 
     useEffect(async () => {
         
         const response = await fetch('/api/users/');
         const res = await response.json();
         const users = res.users
-        user = users.find(user => user?.id === Number(userId))
+        setUser(users.find(user => user?.id === Number(userId)))
 
-        if(user !== undefined) await dispatch(getUserVideos(user?.id));
+        dispatch(getUserVideos(user.id));
     }, [dispatch, userId])
-
 
     
     return (
