@@ -15,6 +15,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [profileImg, setProfileImg] = useState('')
+  const [backgroundImg, setBackgroundImg] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -31,12 +32,17 @@ const SignUpForm = () => {
     setPassword(e.target.value);
   };
 
+
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
   };
 
   const updateProfileImg = (e) => {
     setProfileImg(e.target.value);
+  }
+
+  const updateBackgroundImg = (e) => {
+    setBackgroundImg(e.target.value);
   }
 
   const onSignUp = async (e) => {
@@ -50,9 +56,13 @@ const SignUpForm = () => {
         ? "https://static.vecteezy.com/system/resources/previews/000/573/503/original/vector-sign-of-user-icon.jpg"
         : profileImg;
 
-
+    let backgroundImgUrl =
+      backgroundImg === ""
+        ? "https://cdn.wallpapersafari.com/42/2/a5Qkju.jpeg"
+        : backgroundImg
+    
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, profileImgUrl));
+      const data = await dispatch(signUp(username, email, password, profileImgUrl, backgroundImgUrl));
       if (data) {
         setErrors(data)
       }
@@ -100,6 +110,15 @@ const SignUpForm = () => {
               name="profileImg"
               onChange={updateProfileImg}
               value={profileImg}
+            ></FormInput>
+          </FormLabelInput>
+          <FormLabelInput>
+            <FormLabel>Background Image URl</FormLabel>
+            <FormInput
+              type="text"
+              name="backgroundImg"
+              onChange={updateBackgroundImg}
+              value={backgroundImg}
             ></FormInput>
           </FormLabelInput>
           <FormLabelInput>

@@ -10,6 +10,7 @@ import { ContentDiv } from "../StyledComponents/Content-style";
 import { PlayerDiv } from "../StyledComponents/Player-style";
 import { IndDetails, ProfileImg, IndTitle, CommentsDiv, IndVideoTitle, IndCommentDiv } from "../StyledComponents/Video-style";
 import './IndVideoPage.css'
+import { ProfileImgMid } from "../StyledComponents/Profile-style";
 
 
 const IndVideoPage = () => {
@@ -42,7 +43,7 @@ const IndVideoPage = () => {
       <IndDetails>
         <IndTitle>
           <div className="imgTitle">
-            <ProfileImg src={videoUser?.profileImg}/>
+            <ProfileImgMid src={videoUser?.profileImg}/>
             <IndVideoTitle>{video?.title}</IndVideoTitle>
           </div>
         {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
