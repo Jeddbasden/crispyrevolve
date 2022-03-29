@@ -37,12 +37,8 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-.proUser {
-  
-}
 
 .title-profileDiv {
   display: flex;

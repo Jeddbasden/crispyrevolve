@@ -25,6 +25,11 @@ export const SplashImgDiv = styled.div`
   position: static;
 `;
 
+export const Image = styled.img`
+  width: 100%;
+  height: 100%
+`
+
 export const MainTitle = styled.h1`
   font-size: 72px;
   background: -webkit-linear-gradient(#480ca8, #2187ff);

@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory, useParams } from "react-router-dom";
+import styled from "styled-components";
+
 import { getUserVideos } from "../../store/videos";
-import { ProfileInfoDiv } from "../StyledComponents/Profile-style";
-import { BackgroundDiv, ContentDiv} from "../StyledComponents/Content-style";
-import {Title} from "../StyledComponents/title-style"
-import { ProfileImg } from "../StyledComponents/Video-style";
+import Video from "../HomePage/Video";
+
+import { ProfileImgBig, ProfileInfoDiv, SplashBackgroundImgDiv } from "../StyledComponents/Profile-style";
+import { BackgroundDiv, ContentDiv, Image} from "../StyledComponents/Content-style";
+import {ProfileTitle} from "../StyledComponents/Profile-style"
+import { ProfileImg, VideoUl } from "../StyledComponents/Video-style";
+import { Title } from "../StyledComponents/title-style";
 import "./ProfilePage.css"
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
-    const [ user, setUser ] = useState({})
+    const [user, setUser] = useState({})
+    const videos = useSelector(state => state.videos)
 
     useEffect(async () => {
         
@@ -21,20 +27,40 @@ const ProfilePage = () => {
         setUser(users.find(user => user?.id === Number(userId)))
 
         dispatch(getUserVideos(user.id));
-    }, [dispatch, userId])
-
+    }, [dispatch, userId]) 
+    
+    const SplashBackgroundImgDiv = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        background-image: url(${user?.backgroundImg});
+        background-position: top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: static;
+    `;
     
     return (
         <ContentDiv>
-        <BackgroundDiv>
-            <img src={user?.backgroundImg} />
-        </BackgroundDiv>
+        <SplashBackgroundImgDiv>
+            <ProfileImgBig src={user?.profileImg} />
+            <ProfileTitle>{user?.username}</ProfileTitle>
+        </SplashBackgroundImgDiv>
         <ProfileInfoDiv>
-            <ProfileImg src={user?.profileImg} />
-            <Title>{user?.username}</Title>
+            <Title>Videos</Title>
+            <VideoUl>
+            {videos[0] &&
+                videos.map((video) => {
+                return <Video user={user} video={video} />;
+                })}
+            </VideoUl>
         </ProfileInfoDiv>
         </ContentDiv>
-    )
+    );
 }
 
 export default ProfilePage;
