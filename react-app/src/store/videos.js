@@ -39,7 +39,7 @@ export const getVideos = () => async (dispatch) => {
 export const getUserVideos = (userId) => async (dispatch) => {
   const res = await fetch(`/api/users/${userId}/videos`)
   const data = await res.json();
-
+  
   await dispatch(get_user_videos(data))
 }
 
@@ -95,6 +95,9 @@ const videosReducer = (state = {}, action) => {
     case GET_VIDEOS:
       return action.data.videos;
 
+    case GET_USER_VIDEOS:
+      return action.data.videos;
+    
     default:
       return state;
   }
