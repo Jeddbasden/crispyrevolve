@@ -10,9 +10,9 @@ const get_videos = (data) => ({
 })
 
 const get_user_videos = (data) => ({
-  type: get_user_videos,
+  type: GET_USER_VIDEOS,
   data,
-})
+});
 
 const add_video = (data) => ({
   type: ADD_VIDEO,
@@ -36,8 +36,11 @@ export const getVideos = () => async (dispatch) => {
   await dispatch(get_videos(data));
 }
 
-export const getUserVideos = () => async (dispatch) => {
+export const getUserVideos = (userId) => async (dispatch) => {
+  const res = await fetch(`/api/users/${userId}/videos`)
+  const data = await res.json();
 
+  await dispatch(get_user_videos(data))
 }
 
 export const addVideo = (video) => async (dispatch) => {
@@ -90,9 +93,7 @@ const videosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case GET_VIDEOS:
-      newState = { ...state, };
-      newState = action.data.videos;
-      return newState;
+      return action.data.videos;
 
     default:
       return state;

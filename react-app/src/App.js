@@ -16,7 +16,7 @@ import { authenticate } from './store/session';
 import "./index.css";
 import { getVideos } from './store/videos';
 import Footer from './components/Footer';
-// import ProfilePage from './components/ProfilePage';
+import ProfilePage from './components/ProfilePage';
 
 
 
@@ -51,9 +51,9 @@ function App() {
           {/* <ProtectedRoute path="/users" exact={true}>
             <UsersList />
           </ProtectedRoute> */}
-          {/* <ProtectedRoute path="/users/:userId" exact={true}>
+          <ProtectedRoute path="/users/:userId" exact={true}>
             <ProfilePage />
-          </ProtectedRoute> */}
+          </ProtectedRoute>
           <Route path="/" exact={true}>
             <HomePage />
           </Route>
