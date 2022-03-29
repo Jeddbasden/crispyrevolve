@@ -13,7 +13,6 @@ import { NavLi } from '../StyledComponents/Nav-style';
 
 import logo from '../../assets/logo.jpg'
 import './NavBar.css'
-// import ProfileButton from '../auth/ProfileButton';
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user);
@@ -62,13 +61,13 @@ const NavBar = () => {
           </NavLi>
         )}
 
-        {/* {user && (
+        {user && (
           <NavLi>
             <NavLink to={`users/${user.id}`} exact={true}>
               <i className="fa-duotone fa-user-astronaut fa-lg"></i>
             </NavLink>
           </NavLi>
-        )} */}
+        )}
 
         {user && (
           <NavLi>

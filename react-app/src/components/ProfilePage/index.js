@@ -16,9 +16,12 @@ import "./ProfilePage.css"
 const ProfilePage = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
-    const [user, setUser] = useState({})
-    const videos = useSelector(state => state.videos)
 
+    const [user, setUser] = useState({});
+
+    const allVideos = useSelector(state => state.videos);
+    const videos = allVideos.filter(video => video.userId === Number(userId));
+    
     useEffect(async () => {
         
         const response = await fetch('/api/users/');
