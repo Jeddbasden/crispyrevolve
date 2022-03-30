@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideos } from "../../store/videos";
 import DeleteVideoButton from "./DeleteVideoButton"
@@ -14,6 +14,7 @@ import { ProfileImgMid } from "../StyledComponents/Profile-style";
 
 
 const IndVideoPage = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -43,7 +44,9 @@ const IndVideoPage = () => {
       <IndDetails>
         <IndTitle>
           <div className="imgTitle">
-            <ProfileImgMid src={videoUser?.profileImg}/>
+            <ProfileImgMid src={videoUser?.profileImg}
+              onClick={(e) => history.push(`/users/${videoUser.id}`)}
+            />
             <IndVideoTitle>{video?.title}</IndVideoTitle>
           </div>
         {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
