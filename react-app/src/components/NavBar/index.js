@@ -6,6 +6,8 @@ import { NavLink, useHistory } from 'react-router-dom';
 
 import LogoutButton from '../auth/LogoutButton';
 import { logout } from '../../store/session';
+import LoginFormModal from '../auth/LoginFormModal';
+import SignupFormModal from '../auth/SignUpFormModal';
 
 import { Button, ProfileButtonBtn } from '../StyledComponents/Button-style'
 import { Title, TitleDiv } from '../StyledComponents/title-style';
@@ -47,17 +49,13 @@ const NavBar = () => {
 
         {!user && (
           <NavLi>
-            <NavLink to="/login" exact={true} className="auth">
-              <i className="fas fa-sign-in-alt"></i>
-            </NavLink>
+            <LoginFormModal/>
           </NavLi>
         )}
 
         {!user && (
           <NavLi>
-            <NavLink to="/sign-up" exact={true} className="auth">
-              <i className="fas fa-user-plus"></i>
-            </NavLink>
+            <SignupFormModal />
           </NavLi>
         )}
 
