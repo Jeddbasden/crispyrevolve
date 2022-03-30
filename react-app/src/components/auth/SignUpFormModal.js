@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Modal } from "../../context/Modal";
-import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 
-const LoginFormModal = () => {
+const SignupFormModal = () => {
   const [modal, setModal] = useState(false);
 
   return (
     <div>
-        <i onClick={() => setModal(!modal)} className="fas fa-sign-in-alt"></i>
+      <i onClick={() => setModal(!modal)} className="fas fa-user-plus"></i>
       {modal && (
         <Modal onClose={() => setModal(!modal)}>
-          <LoginForm setModal={setModal} />
+          <SignUpForm setModal={setModal} />
         </Modal>
       )}
     </div>
   );
 };
 
-export default LoginFormModal;
+export default SignupFormModal;
