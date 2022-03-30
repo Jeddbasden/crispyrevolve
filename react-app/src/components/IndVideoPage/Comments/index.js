@@ -71,9 +71,16 @@ const Comments = ({ videoId }) => {
           return (
             <IndCommentDiv key={icomment?.id}>
               <div className="profileComment">
-                <ProfileImg src={commentUser?.profileImg}/>
+                <ProfileImg
+                  src={commentUser?.profileImg}
+                  onClick={(e) => history.push(`/users/${commentUser?.id}`)}
+                />
                 <div className="profileUser">
-                  <Username>{ commentUser?.username }</Username>
+                  <Username
+                    onClick={(e) => history.push(`/users/${commentUser?.id}`)}
+                  >
+                    {commentUser?.username}
+                  </Username>
                   <p>{icomment.comment}</p>
                 </div>
               </div>
