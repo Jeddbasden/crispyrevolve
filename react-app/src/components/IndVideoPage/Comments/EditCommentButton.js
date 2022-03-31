@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import EditCommentPageModal from "../../EditCommentPage/EditCommentPageModal";
 import { ButtonTwo } from "../../StyledComponents/Button-style";
 
 const EditCommentButton = ({ comment }) => {
@@ -13,7 +14,7 @@ const EditCommentButton = ({ comment }) => {
         return history.push(`/comments/${comment?.id}/edit`);
       }}
     >
-      <i className="fas fa-edit"></i>
+      <EditCommentPageModal />
     </ButtonTwo>
   );
 };
