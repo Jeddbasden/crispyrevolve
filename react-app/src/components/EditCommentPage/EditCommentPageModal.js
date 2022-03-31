@@ -4,12 +4,11 @@ import EditCommentPage from ".";
 
 const EditCommentPageModal = () => {
   const [modal, setModal] = useState(false);
-
   return (
     <div>
-      <i onClick={() => setModal(!modal)} className="fas fa-edit"></i>
+      <i onClick={() => setModal(true)} className="fas fa-edit"></i>
       {modal && (
-        <Modal onClose={() => setModal(!modal)}>
+        <Modal onClose={() => setModal(false)}>
           <EditCommentPage setModal={setModal} />
         </Modal>
       )}
