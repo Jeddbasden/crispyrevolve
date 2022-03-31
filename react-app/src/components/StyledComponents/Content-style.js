@@ -46,6 +46,18 @@ export const SpacingDiv = styled.div`
   height: 600px;
 ` ;
 
+export const AddSpacingDiv = styled.div`
+  height: 600px;
+` ;
+
+export const LoginSpacingDiv = styled.div`
+  height: 400px;
+` ;
+
+export const SignUpSpacingDiv = styled.div`
+  height: 200px;
+` ;
+
 export const BackgroundDiv = styled.div`
   display: flex;
   justify-content: center;

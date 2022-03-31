@@ -8,3 +8,13 @@
   width: 250px;
   box-shadow: -5px 5px rgba(0, 0, 0, 0.142);
 }
+
+.fa-video-plus {
+  color: #2187ff;
+  font-weight: 500;
+  font-family: "FontAwesome";
+}
+
+.fas {
+  color: #2187ff;
+}
