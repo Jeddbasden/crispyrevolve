@@ -7,16 +7,7 @@ const EditCommentButton = ({ comment }) => {
   const history = useHistory();
   console.log("!!!!!!! EDIT BUTTON ID !!!!", comment.id)
   return (
-    <ButtonTwo
-      id={comment?.id}
-      type="button"
-      onClick={(e) => {
-        e.preventDefault();
-        return history.push(`/comments/${comment?.id}/edit`);
-      }}
-    >
       <EditCommentPageModal />
-    </ButtonTwo>
   );
 };
 

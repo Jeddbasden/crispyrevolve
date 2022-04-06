@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getComments, editComment } from "../../store/comments";
-import { ContentDiv, SpacingDiv } from "../StyledComponents/Content-style";
+import { ContentDiv2, SpacingDiv } from "../StyledComponents/Content-style";
 import { ButtonTwo } from "../StyledComponents/Button-style";
 import { Form, FormLabel, FormInput, FormLabelInput } from "../StyledComponents/Form-style";
 import "./EditCommentPage.css"
@@ -29,7 +29,7 @@ const EditCommentPage = () => {
   }
 
   return (
-    <ContentDiv>
+    <ContentDiv2>
       <SpacingDiv></SpacingDiv>
       <Form onSubmit={submit}>
         <FormLabel>Edit Comment</FormLabel>
@@ -43,7 +43,7 @@ const EditCommentPage = () => {
         <ButtonTwo type="submit">Done</ButtonTwo>
       </Form>
       <SpacingDiv></SpacingDiv>
-    </ContentDiv>
+    </ContentDiv2>
   );
 };
 

@@ -11,6 +11,15 @@ export const ContentDiv = styled.div`
   padding-bottom: 80px;
 `;
 
+export const ContentDiv2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c21;
+  padding-bottom: 80px;
+`;
+
 export const SplashImgDiv = styled.div`
   display: flex;
   justify-content: center;
