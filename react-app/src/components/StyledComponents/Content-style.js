@@ -11,6 +11,15 @@ export const ContentDiv = styled.div`
   padding-bottom: 80px;
 `;
 
+export const ContentDiv2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c21;
+  padding-bottom: 80px;
+`;
+
 export const SplashImgDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -44,6 +53,18 @@ export const MainTitle = styled.h1`
 
 export const SpacingDiv = styled.div`
   height: 600px;
+` ;
+
+export const AddSpacingDiv = styled.div`
+  height: 600px;
+` ;
+
+export const LoginSpacingDiv = styled.div`
+  height: 400px;
+` ;
+
+export const SignUpSpacingDiv = styled.div`
+  height: 200px;
 ` ;
 
 export const BackgroundDiv = styled.div`

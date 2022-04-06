@@ -21,6 +21,5 @@
   #modal-content {
     position: absolute;
     background-color:white;
-    overflow: scroll;
     border-radius: 15px;
   }

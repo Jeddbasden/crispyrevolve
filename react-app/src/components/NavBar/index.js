@@ -8,6 +8,7 @@ import LogoutButton from '../auth/LogoutButton';
 import { logout } from '../../store/session';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignupFormModal from '../auth/SignUpFormModal';
+import AddVideoPageModal from '../AddVideoPage/AddVideoPageModal';
 
 import { Button, ProfileButtonBtn } from '../StyledComponents/Button-style'
 import { Title, TitleDiv } from '../StyledComponents/title-style';
@@ -41,9 +42,7 @@ const NavBar = () => {
 
         <NavLi>
           {user && (
-            <Button onClick={(e) => history.push("/videos/add")}>
-              Add Video
-            </Button>
+            <AddVideoPageModal />
           )}
         </NavLi>
 

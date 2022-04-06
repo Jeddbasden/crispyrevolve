@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import DemoUserButton from './DemoUserButton'
 import { Form, FormInput, FormLabel, FormLabelInput, ErrorP, DivForm, ErrorDiv } from "../StyledComponents/Form-style";
-import { ContentDiv } from '../StyledComponents/Content-style';
+import { ContentDiv, LoginSpacingDiv } from '../StyledComponents/Content-style';
 import { ButtonTwo } from '../StyledComponents/Button-style';
 
 
@@ -37,6 +37,7 @@ const LoginForm = () => {
 
   return (
     <ContentDiv>
+      <LoginSpacingDiv/>
       <DivForm>
         <Form onSubmit={onLogin}>
           <ErrorDiv>
