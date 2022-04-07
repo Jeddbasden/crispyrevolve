@@ -4,7 +4,7 @@ import { addVideo } from "../../store/videos";
 import { useHistory } from "react-router-dom";
 import { Form, FormInput, FormLabel, FormLabelInput } from "../StyledComponents/Form-style";
 import { ButtonTwo } from "../StyledComponents/Button-style";
-import { ContentDiv, AddSpacingDiv } from "../StyledComponents/Content-style";
+import { ContentDiv2, AddSpacingDiv } from "../StyledComponents/Content-style";
 import "./AddVideoPage.css"
 
 const AddVideoPage = () => {
@@ -30,7 +30,7 @@ const AddVideoPage = () => {
   }
 
   return (
-    <ContentDiv>
+    <ContentDiv2>
       <AddSpacingDiv/>
       <Form onSubmit={submit}>
         <FormLabelInput>
@@ -77,7 +77,7 @@ const AddVideoPage = () => {
         <ButtonTwo type='submit'>submit</ButtonTwo>
       </Form>
       <AddSpacingDiv/>
-    </ContentDiv>
+    </ContentDiv2>
   )
 }
 
