@@ -41,35 +41,35 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Footer />
-        <Switch>
-          {/* <Route path="/login" exact={true}>
-            <LoginForm />
-          </Route> */}
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
-          </Route>
-          {/* <ProtectedRoute path="/users" exact={true}>
-            <UsersList />
-          </ProtectedRoute> */}
-          <ProtectedRoute path="/users/:userId" exact={true}>
-            <ProfilePage />
-          </ProtectedRoute>
-          <Route path="/" exact={true}>
-            <HomePage />
-          </Route>
-          <Route path="/videos/add" exact={true}>
-            <AddVideoPage />
-          </Route>
-          <Route path="/videos/:id" exact={true}>
-            <IndVideoPage />
-          </Route>
-          <Route path="/videos/:id/edit" exact={true}>
-            <EditVideoPage />
-          </Route>
-          <Route path="/comments/:id/edit" exact={true}>
-            <EditCommentPage />
-          </Route>
-        </Switch>
+      <Switch>
+        {/* <Route path="/login" exact={true}>
+          <LoginForm />
+        </Route> */}
+        {/* <Route path="/sign-up" exact={true}>
+          <SignUpForm />
+        </Route> */}
+        {/* <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
+        </ProtectedRoute> */}
+        <ProtectedRoute path="/users/:userId" exact={true}>
+          <ProfilePage />
+        </ProtectedRoute>
+        <Route path="/" exact={true}>
+          <HomePage />
+        </Route>
+        <Route path="/videos/add" exact={true}>
+          <AddVideoPage />
+        </Route>
+        <Route path="/videos/:id" exact={true}>
+          <IndVideoPage />
+        </Route>
+        <Route path="/videos/:id/edit" exact={true}>
+          <EditVideoPage />
+        </Route>
+        {/* <Route path="/comments/:id/edit" exact={true}>
+          <EditCommentPage />
+        </Route> */}
+      </Switch>
     </BrowserRouter>
   );
 }

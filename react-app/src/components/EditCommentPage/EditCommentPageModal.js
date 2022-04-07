@@ -6,14 +6,16 @@ import { ButtonTwo } from "../StyledComponents/Button-style";
 const EditCommentPageModal = () => {
   const [modal, setModal] = useState(false);
   return (
-    <ButtonTwo>
-      <i onClick={() => setModal(true)} className="fas fa-edit"></i>
-      {modal && (
-        <Modal onClose={() => setModal(false)}>
-          <EditCommentPage setModal={setModal} />
-        </Modal>
-      )}
-    </ButtonTwo>
+    <div>
+      <ButtonTwo onClick={() => setModal(true)}>
+        <i onClick={() => setModal(true)} className="fas fa-edit"></i>
+      </ButtonTwo>
+        {modal && (
+          <Modal onClose={() => setModal(false)}>
+            <EditCommentPage setModal={setModal} />
+          </Modal>
+        )}
+    </div>
   );
 };
 

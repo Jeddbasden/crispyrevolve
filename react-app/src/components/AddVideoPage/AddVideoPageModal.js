@@ -9,11 +9,8 @@ const AddVideoPageModal = () => {
 
   return (
     <div>
-      <Button onClick={() => setModal(!modal)}>
-        <i
-          onClick={() => setModal(!modal)}
-          className="fa-solid fa-square-plus"
-        ></i>
+      <Button onClick={() => setModal(true)}>
+        Add Video
       </Button>
       {modal && (
         <Modal onClose={() => setModal(!modal)}>

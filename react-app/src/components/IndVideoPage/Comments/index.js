@@ -8,6 +8,7 @@ import { ProfileImg, IndTitle, Username, IndCommentDiv } from "../../StyledCompo
 import { CommentForm, FormInput, FormLabel  } from "../../StyledComponents/Form-style";
 import { Button, ButtonTwo } from "../../StyledComponents/Button-style";
 import './Comments.css'
+import { CenteredRowDiv } from "../../StyledComponents/Content-style";
 
 const Comments = ({ videoId }) => {
   const dispatch = useDispatch();
@@ -85,10 +86,10 @@ const Comments = ({ videoId }) => {
                 </div>
               </div>
               {icomment.userId === userId && (
-                <div>
+                <CenteredRowDiv>
                   <EditCommentButton comment={icomment} />
                   <DeleteCommentButton comment={icomment} />
-                </div>
+                </CenteredRowDiv>
               )}
             </IndCommentDiv>
           );

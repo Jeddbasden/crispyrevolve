@@ -8,7 +8,7 @@ import { Form, FormLabel, FormInput, FormLabelInput } from "../StyledComponents/
 import "./EditCommentPage.css"
 
 
-const EditCommentPage = () => {
+const EditCommentPage = ({ setModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
@@ -25,7 +25,7 @@ const EditCommentPage = () => {
   const submit = async (e) => {
     e.preventDefault();
     await dispatch(editComment(message, comment?.id))
-    return history.push(`/videos/${comment?.videoId}`)
+    return setModal(false)
   }
 
   return (

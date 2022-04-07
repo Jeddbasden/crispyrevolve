@@ -9,6 +9,24 @@ export const ContentDiv = styled.div`
   align-items: center;
   background-color: #1c1c21;
   padding-bottom: 80px;
+  contain: content;
+`;
+
+export const CenteredRowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  padding-right: 25px
+`;
+
+export const CenteredColumnDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  align-items: center;
 `;
 
 export const ContentDiv2 = styled.div`
@@ -16,8 +34,6 @@ export const ContentDiv2 = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1c1c21;
-  padding-bottom: 80px;
 `;
 
 export const SplashImgDiv = styled.div`

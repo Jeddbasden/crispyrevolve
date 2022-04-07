@@ -7,9 +7,9 @@ const SignupFormModal = () => {
 
   return (
     <div>
-      <i onClick={() => setModal(!modal)} className="fas fa-user-plus"></i>
+      <i onClick={() => setModal(true)} className="fas fa-user-plus"></i>
       {modal && (
-        <Modal onClose={() => setModal(!modal)}>
+        <Modal onClose={() => setModal(false)}>
           <SignUpForm setModal={setModal} />
         </Modal>
       )}

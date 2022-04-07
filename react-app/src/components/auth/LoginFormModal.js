@@ -7,11 +7,13 @@ const LoginFormModal = () => {
 
   return (
     <div>
-        <i onClick={() => setModal(!modal)} className="fas fa-sign-in-alt"></i>
+        <i onClick={() => setModal(true)} className="fas fa-sign-in-alt"></i>
       {modal && (
-        <Modal onClose={() => setModal(!modal)}>
-          <LoginForm setModal={setModal} />
-        </Modal>
+        <div>
+          <Modal onClose={() => setModal(false)}>
+            <LoginForm setModal={setModal} />
+          </Modal>
+        </div>
       )}
     </div>
   );

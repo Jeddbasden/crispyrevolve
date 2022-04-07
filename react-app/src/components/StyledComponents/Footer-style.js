@@ -6,7 +6,7 @@ export const FooterDiv = styled.div`
   width: 100%;
   height: auto;
   justify-content: space-around;
-  background: linear-gradient(to right, #480ca8, #000000);
+  background-color: #1c1c21;
   position: fixed;
   bottom: 0px;
   padding: 10px;

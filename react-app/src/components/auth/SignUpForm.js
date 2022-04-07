@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import { Form, FormInput, FormLabel, FormLabelInput, DivForm, ErrorP, ErrorDiv } from '../StyledComponents/Form-style';
-import { ContentDiv, SignUpSpacingDiv } from '../StyledComponents/Content-style';
+import { ContentDiv2, SignUpSpacingDiv } from '../StyledComponents/Content-style';
 import { ButtonTwo } from '../StyledComponents/Button-style';
 import { CommentsDiv } from '../StyledComponents/Video-style';
 
@@ -75,7 +75,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <ContentDiv>
+    <ContentDiv2>
       <SignUpSpacingDiv/>
       <DivForm>
         <Form onSubmit={onSignUp}>
@@ -145,7 +145,7 @@ const SignUpForm = () => {
           <ButtonTwo type="submit">Sign Up</ButtonTwo>
         </Form>
       </DivForm>
-    </ContentDiv>
+    </ContentDiv2>
   );
 };
 
