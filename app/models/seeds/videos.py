@@ -16,14 +16,6 @@ def seed_videos():
     imgUrl="https://i.ytimg.com/vi/kMU6ZJf1lcY/maxresdefault.jpg"
   )
 
-  demo_video3 = Video(
-    userId=1,
-    title="Rengoku Ninth Form",
-    videoUrl="https://www.youtube.com/watch?v=Z3Ziz9jQc8Q",
-    description=" Rengoku uses his 9th breathing form and pops off",
-    imgUrl="https://i.ytimg.com/vi/_vwZeGV3deI/maxresdefault.jpg"
-  )
-
   demo_video4 = Video(
     userId=1,
     title= 'Nomad(Megalo Boxing) new season trailer',

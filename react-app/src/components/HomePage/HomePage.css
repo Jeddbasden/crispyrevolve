@@ -50,6 +50,7 @@ h1 {
 .videoTitle {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 15px;
 }
 
 .videoInfo {
