@@ -6,7 +6,7 @@ import DeleteVideoButton from "./DeleteVideoButton"
 import EditVideoButton from "./EditVideoButton";
 import Comments from "./Comments/index";
 import YouTube from "@u-wave/react-youtube";
-import { ContentDiv } from "../StyledComponents/Content-style";
+import { CenteredRowDiv, ContentDiv } from "../StyledComponents/Content-style";
 import { PlayerDiv } from "../StyledComponents/Player-style";
 import { IndDetails, ProfileImg, IndTitle, CommentsDiv, IndVideoTitle, IndCommentDiv } from "../StyledComponents/Video-style";
 import './IndVideoPage.css'
@@ -50,10 +50,10 @@ const IndVideoPage = () => {
             <IndVideoTitle>{video?.title}</IndVideoTitle>
           </div>
         {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
-          <div>
+          <CenteredRowDiv>
             <EditVideoButton video={video} />
             <DeleteVideoButton video={video} />
-          </div>
+          </CenteredRowDiv>
         )}
         </IndTitle>
         <IndCommentDiv>

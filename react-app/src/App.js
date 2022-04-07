@@ -63,9 +63,9 @@ function App() {
         <Route path="/videos/:id" exact={true}>
           <IndVideoPage />
         </Route>
-        <Route path="/videos/:id/edit" exact={true}>
+        {/* <Route path="/videos/:id/edit" exact={true}>
           <EditVideoPage />
-        </Route>
+        </Route> */}
         {/* <Route path="/comments/:id/edit" exact={true}>
           <EditCommentPage />
         </Route> */}

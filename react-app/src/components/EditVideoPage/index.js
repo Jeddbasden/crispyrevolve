@@ -4,10 +4,10 @@ import { useHistory, useParams } from "react-router-dom";
 import { getVideos, editVideo } from "../../store/videos";
 import { Form, FormLabel, FormInput,FormLabelInput } from "../StyledComponents/Form-style";
 import { ButtonTwo } from "../StyledComponents/Button-style";
-import { ContentDiv, SpacingDiv } from "../StyledComponents/Content-style";
+import { ContentDiv2, SpacingDiv } from "../StyledComponents/Content-style";
 import './EditVideoPage.css'
 
-const EditVideoPage = () => {
+const EditVideoPage = ({setModal}) => {
   const videos = useSelector(state => state.videos)
   const history = useHistory()
   const { id } = useParams()
@@ -30,11 +30,11 @@ const EditVideoPage = () => {
       imgUrl,
     };
     await dispatch(editVideo(newVideo, id))
-    return history.push(`/videos/${id}`);
+    return setModal(false);
   };
 
   return (
-    <ContentDiv>
+    <ContentDiv2>
       <SpacingDiv></SpacingDiv>
       <Form onSubmit={submit}>
         <FormLabelInput>
@@ -71,7 +71,7 @@ const EditVideoPage = () => {
         <ButtonTwo type="submit">submit</ButtonTwo>
       </Form>
       <SpacingDiv></SpacingDiv>
-    </ContentDiv>
+    </ContentDiv2>
   );
 }
 
