@@ -64,7 +64,7 @@ def edit_comment(id):
 
     db.session.commit()
 
-    comments = Comment.query.filter(Comment.videoId == videoId).order_by(Comment.id.desc())
+    comments = Comment.query.filter(Comment.videoId == videoId).order_by(Comment.id.asc())
     comments = [item.to_dict() for item in comments]
     return{"comments": comments}
 

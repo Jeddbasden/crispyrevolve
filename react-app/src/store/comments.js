@@ -44,6 +44,7 @@ export const editComment = (comment, id) => async(dispatch) => {
     body: JSON.stringify({ 'comment': comment })
   })
   const data = await res.json();
+  
   await dispatch(update_comments(data));
 }
 

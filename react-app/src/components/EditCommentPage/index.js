@@ -8,14 +8,11 @@ import { Form, FormLabel, FormInput, FormLabelInput } from "../StyledComponents/
 import "./EditCommentPage.css"
 
 
-const EditCommentPage = ({ setModal }) => {
+const EditCommentPage = ({ setModal, comment }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-
-  const comments = useSelector(state => state.comments);
-  const comment = comments?.find(comment => comment?.id === Number(id));
-
+  
   const [message, setMessage] = useState(comment.comment)
 
   useEffect(() => {
@@ -38,6 +35,7 @@ const EditCommentPage = ({ setModal }) => {
           name="comment"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          autoComplete="off"
           required
         />
         <ButtonTwo type="submit">Done</ButtonTwo>

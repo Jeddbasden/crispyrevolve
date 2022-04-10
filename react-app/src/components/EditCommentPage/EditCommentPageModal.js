@@ -3,7 +3,7 @@ import { Modal } from "../../context/Modal";
 import EditCommentPage from ".";
 import { ButtonTwo } from "../StyledComponents/Button-style";
 
-const EditCommentPageModal = () => {
+const EditCommentPageModal = ({comment}) => {
   const [modal, setModal] = useState(false);
   return (
     <div>
@@ -12,7 +12,7 @@ const EditCommentPageModal = () => {
       </ButtonTwo>
         {modal && (
           <Modal onClose={() => setModal(false)}>
-            <EditCommentPage setModal={setModal} />
+            <EditCommentPage comment={comment} setModal={setModal} />
           </Modal>
         )}
     </div>

@@ -6,7 +6,7 @@ import { ButtonTwo } from "../../StyledComponents/Button-style";
 const EditCommentButton = ({ comment }) => {
   const history = useHistory();
   return (
-      <EditCommentPageModal />
+      <EditCommentPageModal comment={comment} />
   );
 };
 
