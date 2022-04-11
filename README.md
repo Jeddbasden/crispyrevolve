@@ -2,6 +2,8 @@
 Hi! welcome to crispyrevolve the site where you can watch dope anime clips with a twist!
 head to https://crispyrevolve.herokuapp.com/ for the main version, for a local version follow the steps below!
 
+![image](https://user-images.githubusercontent.com/74204664/151825850-183cc4bd-0123-4646-92d2-d919ff213136.png)
+
 ## Wiki Link
 https://github.com/Jeddbasden/crispyrevolve/wiki
 
@@ -47,6 +49,6 @@ pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.t
   ```
   
   
- ![image](https://user-images.githubusercontent.com/74204664/151825850-183cc4bd-0123-4646-92d2-d919ff213136.png)
+ 
 
 
