@@ -54,7 +54,7 @@ const ProfilePage = () => {
             <ProfileTitle>{user?.username}</ProfileTitle>
         </SplashBackgroundImgDiv>
         <ProfileInfoDiv>
-            <Title>Videos</Title>
+                <Title>{ user?.username }'s Videos</Title>
             <VideoUl>
             {videos[0] &&
                 videos.map((video) => {
