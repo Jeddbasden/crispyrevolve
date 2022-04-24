@@ -40,7 +40,7 @@ const HomePage = () => {
         </DescriptionTitle>
       </DescriptionDiv>
       <div className="featured-videos">
-        <Title>Featured Videos</Title>
+        <Title>Videos</Title>
       </div>
       <VideoUl>
         {videos[0] &&
