@@ -12,8 +12,8 @@ class Video(db.Model):
 
   user = db.relationship('User', back_populates='videos')
   polls = db.relationship('Poll', back_populates='video')
-  comments = db.relationship('Comment', back_populates='video')
-  likes = db.relationship('Like', back_populates='video')
+  comments = db.relationship('Comment', cascade="all, delete", back_populates='video')
+  likes = db.relationship('Like', cascade="all, delete", back_populates='video')
   quizzes = db.relationship('Quiz', back_populates='video')
   
 

@@ -11,9 +11,10 @@ def seed_videos():
 
   demo_video2 = Video(
     userId=1,
-    title='Luffy punches Celestial Dragon',
-    videoUrl='https://www.youtube.com/watch?v=8ot2QJuJNxI',
-    imgUrl="https://i.ytimg.com/vi/kMU6ZJf1lcY/maxresdefault.jpg"
+    title='Manipulation at its finest	',
+    videoUrl='https://www.youtube.com/watch?v=wN2W8zpr7hc',
+    description="eren convinces greisha to slaughter a family",
+    imgUrl="https://i.ytimg.com/vi/y3DOWGm1X7M/maxresdefault.jpg"
   )
 
   demo_video4 = Video(

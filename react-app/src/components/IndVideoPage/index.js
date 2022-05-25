@@ -31,7 +31,7 @@ const IndVideoPage = () => {
   
   const videos = useSelector(state => state.videos);
 
-  const video = videos?.find(video => video?.id === Number(id));
+  const video = videos?.find(video => video.id === Number(id));
   const videoUser = users.find(user => user.id === video.userId)
   const youtubeId = video.videoUrl.split("=")[1]
   return (
@@ -49,7 +49,7 @@ const IndVideoPage = () => {
             />
             <IndVideoTitle>{video?.title}</IndVideoTitle>
           </div>
-        {(videos?.length > 0 && (user && (user.id === video.userId)))  && (
+        {(video && (user && (user.id === video.userId)))  && (
           <CenteredRowDiv>
             <EditVideoButton video={video} />
             <DeleteVideoButton video={video} />

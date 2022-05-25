@@ -46,7 +46,7 @@ const HomePage = () => {
         {videos[0] &&
           videos.map((video) => {
             const user = users?.find((user) => user?.id === video.userId);
-            return <Video user={user} video={video} />;
+            return <Video key={video?.id} user={user} video={video} />;
           })}
       </VideoUl>
     </ContentDiv>

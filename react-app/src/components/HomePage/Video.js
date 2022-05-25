@@ -14,10 +14,6 @@ const Video = ({ user, video }) => {
         <div>
           <VideoImg
             className="videoImg"
-            onClick={(e) => {
-              e.preventDefault();
-              history.push(`/videos/${video?.id}`);
-            }}
             alt="video image"
             src={`${video?.imgUrl}`}
           />
@@ -25,7 +21,7 @@ const Video = ({ user, video }) => {
         <div className="videoInfo">
           <div className="title-profileDiv">
             <div className="proUser">
-              <ProfileImg src={user?.profileImg} />
+              <ProfileImg src={ user?.profileImg } />
               <Username>{user?.username}</Username>
             </div>
             <div className="videoTitle">
