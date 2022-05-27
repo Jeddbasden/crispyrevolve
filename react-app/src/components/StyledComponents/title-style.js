@@ -19,5 +19,6 @@ export const Title = styled.h1`
 export const TitleDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start
+  justify-content: flex-start;
+  align-items: center;
 `;
