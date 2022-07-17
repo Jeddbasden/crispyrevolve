@@ -10,7 +10,7 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.videos_routes import videos_routes
 from .api.comments_routes import comments_routes
-from .api.polls_routes import polls_routes
+# from .api.polls_routes import polls_routes
 
 from .models.seeds import seed_commands
 
@@ -36,7 +36,7 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(videos_routes, url_prefix='/api/videos')
 app.register_blueprint(comments_routes, url_prefix='/api/comments')
-app.register_blueprint(polls_routes, url_prefix='/api/polls')
+# app.register_blueprint(polls_routes, url_prefix='/api/polls')
 
 db.init_app(app)
 Migrate(app, db)

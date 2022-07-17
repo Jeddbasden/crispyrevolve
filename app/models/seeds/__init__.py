@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .videos import seed_videos, undo_videos
-from .polls import seed_polls, undo_polls
+# from .polls import seed_polls, undo_polls
 from .comments import seed_comments, undo_comments
 
 # Creates a seed group to hold our commands
@@ -14,7 +14,7 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_videos()
-    seed_polls()
+    # seed_polls()
     seed_comments()
     # Add other seed functions here
 
@@ -24,6 +24,6 @@ def seed():
 def undo():
     undo_users()
     undo_videos()
-    undo_polls()
+    # undo_polls()
     undo_comments()
     # Add other undo functions here

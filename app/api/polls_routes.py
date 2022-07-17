@@ -1,8 +1,7 @@
-from flask import Blueprint, request
-from flask_login import current_user, login_required
+# from flask import Blueprint, request
+# from flask_login import current_user, login_required
 
 
-from app.models import db, Poll
+# from app.models import db, Poll
 
-polls_routes = Blueprint('polls',__name__)
-
+# polls_routes = Blueprint('polls',__name__)

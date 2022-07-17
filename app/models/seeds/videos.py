@@ -17,7 +17,7 @@ def seed_videos():
     imgUrl="https://i.ytimg.com/vi/y3DOWGm1X7M/maxresdefault.jpg"
   )
 
-  demo_video4 = Video(
+  demo_video3 = Video(
     userId=1,
     title= 'Nomad(Megalo Boxing) new season trailer',
     videoUrl='https://www.youtube.com/watch?v=kHBlVtrtjck',
@@ -28,7 +28,6 @@ def seed_videos():
   db.session.add(demo_video1)
   db.session.add(demo_video2)
   db.session.add(demo_video3)
-  db.session.add(demo_video4)
 
   db.session.commit()
 

@@ -42,9 +42,13 @@ def add_video():
 @videos_routes.route('/<int:videoId>', methods=['DELETE'])
 @login_required
 def delete_video(videoId):
+  print("!!!! IN FUNCTION !!!")
   video = Video.query.get(videoId)
+  print("!!!! VIDEO !!!", video.title)
   db.session.delete(video)
+  print("!!!! DELETED !!!")
   db.session.commit()
+  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   
   return{'message': "success"}
 
