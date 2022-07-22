@@ -6,8 +6,9 @@ import { Form, FormInput, FormLabel, FormLabelInput } from "../StyledComponents/
 import { ButtonTwo } from "../StyledComponents/Button-style";
 import { ContentDiv2, AddSpacingDiv } from "../StyledComponents/Content-style";
 import "./AddVideoPage.css"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
-const AddVideoPage = () => {
+const AddVideoPage = ({setModal}) => {
   const dispatch = useDispatch();
   const history = useHistory()
 
@@ -26,7 +27,7 @@ const AddVideoPage = () => {
     };
 
     await dispatch(addVideo(video));
-    return history.push('/')
+    return <Redirect to='/' />;
   }
 
   return (
