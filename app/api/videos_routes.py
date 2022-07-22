@@ -35,7 +35,11 @@ def add_video():
     db.session.add(video)
     db.session.commit()
     
-    return video.to_dict()
+    videos = Video.query.all()
+    videos = [ item.to_dict() for item in videos ]
+    
+    return {'videos': videos}
+
   return form.errors
 
 

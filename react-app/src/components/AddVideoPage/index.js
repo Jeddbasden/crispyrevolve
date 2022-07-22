@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addVideo } from "../../store/videos";
 import { useHistory } from "react-router-dom";
 import { Form, FormInput, FormLabel, FormLabelInput } from "../StyledComponents/Form-style";
@@ -27,7 +27,8 @@ const AddVideoPage = ({setModal}) => {
     };
 
     await dispatch(addVideo(video));
-    return <Redirect to='/' />;
+    setModal(false);
+    return history.push(``);
   }
 
   return (

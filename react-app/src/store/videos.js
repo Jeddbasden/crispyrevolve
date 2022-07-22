@@ -58,7 +58,7 @@ export const addVideo = (video) => async (dispatch) => {
   });
 
   const data = await res.json()
-  await dispatch(add_video(data))
+  await dispatch(get_videos(data))
 }
 
 
