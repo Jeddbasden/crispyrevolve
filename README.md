@@ -4,9 +4,6 @@ head to https://crispyrevolve.herokuapp.com/ for the main version, for a local v
 
 ![image](https://user-images.githubusercontent.com/74204664/151825850-183cc4bd-0123-4646-92d2-d919ff213136.png)
 
-## Wiki Link
-https://github.com/Jeddbasden/crispyrevolve/wiki
-
 ## Additions
 This site utilizes a react component called React Youtube Player. this component gets youtube links and is able to play youtube videos passed in.
 
